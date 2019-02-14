@@ -1,0 +1,35 @@
+# Publish to Azure pipeline
+# for the Oechsler Azure Web Service
+# Copyright © 2019 - Samuel Oechsler
+
+# Automatic triggers
+trigger:
+  branches:
+    include:
+      - master
+  paths:
+    exclude:
+      - docs/*
+
+# Build image
+pool:
+  vmImage: ubuntu-16.04
+
+# NodeJS build environment
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '11.x'
+- script: 'yarn install'
+- script: 'yarn build'
+# Include web.config for IIS from GitHub Gist
+- script: 'cd build && wget https://gist.githubusercontent.com/Boxwrapper/4615750066dbeb85c379e3876b9c0734/raw/420b919a57811360f4abeee929358847b39c61b0/web.config'
+# Azure Web Service publish task
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/build'
+- task: AzureRmWebAppDeployment@3
+  inputs:
+    azureSubscription: 'Azure Subscription'
+    WebAppName: 'Oechsler'
+    Package: '$(System.DefaultWorkingDirectory)/build'
