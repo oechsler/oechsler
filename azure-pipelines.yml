@@ -2,8 +2,17 @@
 # for the Oechsler Azure Web Service
 # Copyright © 2019 - Samuel Oechsler
 
-# Automatic triggers
+# Automatic ci triggers
 trigger:
+  branches:
+    include:
+      - master
+  paths:
+    exclude:
+      - docs/*
+
+# Automatic pull request triggers
+pr:
   branches:
     include:
       - master
@@ -22,14 +31,7 @@ steps:
     versionSpec: '11.x'
 - script: 'yarn install'
 - script: 'yarn build'
-# Include web.config for IIS from GitHub Gist
-- script: 'cd build && wget https://gist.githubusercontent.com/Boxwrapper/4615750066dbeb85c379e3876b9c0734/raw/420b919a57811360f4abeee929358847b39c61b0/web.config'
-# Azure Web Service publish task
+# Artifact publish task
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(System.DefaultWorkingDirectory)/build'
-- task: AzureRmWebAppDeployment@3
-  inputs:
-    azureSubscription: 'Azure Subscription'
-    WebAppName: 'Oechsler'
-    Package: '$(System.DefaultWorkingDirectory)/build'
