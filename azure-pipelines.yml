@@ -24,14 +24,21 @@ pr:
 pool:
   vmImage: ubuntu-16.04
 
-# NodeJS build environment
+# Setup the build environment
 steps:
 - task: NodeTool@0
   inputs:
     versionSpec: '11.x'
-- script: 'yarn install'
-- script: 'yarn build'
+  displayName: 'Set up the NodeJS workspace'
+
+# Resolve dependencies and build  
+- script: |
+    yarn install
+    yarn build
+  displayName: 'Get dependencies, then build'
+  
 # Artifact publish task
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(System.DefaultWorkingDirectory)/build'
+  displayName: 'Publish build artifacts'
