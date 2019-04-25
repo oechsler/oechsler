@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  Container,
+  Image,
+  Segment,
+  Header,
+  Grid,
+  Icon,
+  Popup,
+  Menu
+} from 'semantic-ui-react';
+import Hero from './components/hero/Hero';
 
 class App extends Component {
-  constructor() {
-    super({});
-    document.title = 'oechsler';
-  }
-
   render() {
     return (
-      <div className='App'>
-        <header className='App-header'>
-          <img src={logo} className='App-logo' alt='logo' />
-          <p>This site is under construction.</p>
-        </header>
+      <div>
+        <Hero />
       </div>
     );
   }
