@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, ReactNode } from 'react';
 import { Header, Image, Grid } from 'semantic-ui-react';
 import ElevatorButton from './ElevatorButton';
 import typeFilter from '../../utils/typeFilter';
@@ -9,34 +9,30 @@ interface ElevatorProps {
   image: string;
   name: string;
   age: number;
-  status?: React.ReactNode;
+  status?: ReactNode;
   inverted?: boolean;
+  children?: ReactNode;
 }
 
-export default class Elevator extends Component<ElevatorProps> {
-  static Button = ElevatorButton;
+const Elevator = (props: ElevatorProps) => {
+  return (
+    <div className='elevator'>
+      <Image src={props.image} size='medium' circular centered />
+      <Header className='elevator-header' inverted={props.inverted}>
+        {props.name}
+      </Header>
+      <Header className='elevator-sub' inverted={props.inverted}>
+        <strong>{props.age}.</strong>
+        &nbsp;
+        {props.status}
+        {props.status !== undefined ? '.' : null}
+      </Header>
+      <Grid className='elevator-buttons' centered inverted={props.inverted}>
+        {typeFilter(props.children, [ElevatorButton])}
+      </Grid>
+    </div>
+  );
+};
 
-  render = () => {
-    return (
-      <div className='elevator'>
-        <Image src={this.props.image} size='medium' circular centered />
-        <Header className='elevator-header' inverted={this.props.inverted}>
-          {this.props.name}
-        </Header>
-        <Header className='elevator-sub' inverted={this.props.inverted}>
-          <strong>{this.props.age}.</strong>
-          &nbsp;
-          {this.props.status}
-          {this.props.status !== undefined ? '.' : null}
-        </Header>
-        <Grid
-          className='elevator-buttons'
-          centered
-          inverted={this.props.inverted}
-        >
-          {typeFilter(this.props.children, [ElevatorButton])}
-        </Grid>
-      </div>
-    );
-  };
-}
+Elevator.Button = ElevatorButton;
+export default Elevator;

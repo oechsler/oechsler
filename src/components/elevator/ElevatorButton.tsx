@@ -8,41 +8,39 @@ interface ElevatorButtonProps {
   inverted?: boolean;
 }
 
-export default class ElevatorButton extends Component<ElevatorButtonProps> {
-  renderIcon = () => {
+const ElevatorButton = (props: ElevatorButtonProps) => {
+  const renderIcon = () => {
     return (
-      <a href={this.props.href} style={{ color: 'white' }}>
+      <a href={props.href} style={{ color: 'white' }}>
         <Icon
-          name={this.props.icon}
+          name={props.icon}
           size='big'
-          color={this.props.inverted ? undefined : 'black'}
+          color={props.inverted ? undefined : 'black'}
           link
         />
       </a>
     );
   };
 
-  renderPopUp = () => {
+  const renderPopUp = () => {
     return (
       <Popup
-        trigger={this.renderIcon()}
+        trigger={renderIcon()}
         verticalOffset={10}
-        content={this.props.description}
+        content={props.description}
         position='bottom center'
-        inverted={this.props.inverted}
+        inverted={props.inverted}
       />
     );
   };
 
-  render = () => {
-    return (
-      <div>
-        <Grid.Column width={2}>
-          {this.props.description !== undefined
-            ? this.renderPopUp()
-            : this.renderIcon()}
-        </Grid.Column>
-      </div>
-    );
-  };
-}
+  return (
+    <div>
+      <Grid.Column width={2}>
+        {props.description !== undefined ? renderPopUp() : renderIcon()}
+      </Grid.Column>
+    </div>
+  );
+};
+
+export default ElevatorButton;
