@@ -22,7 +22,7 @@ class App extends Component {
             age={20}
             status={
               <span>
-                Student, developer <strong>@medialesson</strong>
+                Student, developer <a href='#'>@medialesson</a>
               </span>
             }
             inverted

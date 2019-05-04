@@ -11,13 +11,8 @@ interface ElevatorButtonProps {
 const ElevatorButton = (props: ElevatorButtonProps) => {
   const renderIcon = () => {
     return (
-      <a href={props.href} style={{ color: 'white' }}>
-        <Icon
-          name={props.icon}
-          size='big'
-          color={props.inverted ? undefined : 'black'}
-          link
-        />
+      <a href={props.href} className={props.inverted ? 'inverted' : undefined}>
+        <Icon name={props.icon} size='big' />
       </a>
     );
   };
@@ -35,7 +30,7 @@ const ElevatorButton = (props: ElevatorButtonProps) => {
   };
 
   return (
-    <div>
+    <div className='elevator-button'>
       <Grid.Column width={2}>
         {props.description !== undefined ? renderPopUp() : renderIcon()}
       </Grid.Column>

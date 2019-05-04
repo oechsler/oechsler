@@ -11,5 +11,41 @@
     font-size: 18px
     font-weight: normal
 
+.ui.header.elevator-sub a
+    font-weight: bold
+    color: inherit
+    transition: color .2s ease
+
+.ui.header.elevator-sub 
+    a
+        color: transparentize(black, .3)
+    
+    a:hover
+        color: black
+
+.ui.inverted.header.elevator-sub 
+    a
+        color: transparentize(white, .15)
+    
+    a:hover
+        color: white
+
 .ui.grid.elevator-buttons
     padding-top: 2em
+
+.elevator-buttons 
+
+    .elevator-button 
+        a i
+            color: black
+            transition: color .2s ease
+
+        a i:hover
+            color: transparentize(black, .3)
+
+        a.inverted i
+            color: transparentize(white, .15)
+            transition: color .2s ease
+
+        a.inverted i:hover
+            color: white
