@@ -15,6 +15,14 @@ class App extends Component {
               <Navigation.Item href='#' text='Projects.' />
             </Navigation>
           }
+          background={{
+            color: '#fda900',
+            image:
+              'https://images.unsplash.com/photo-1557068066-f5f3da90d402?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&dl=samuel-oechsler-1566306-unsplash.jpg',
+            opacity: 0.2,
+            blur: 8
+          }}
+          inverted
         >
           <Elevator
             image='https://secure.gravatar.com/avatar/760c95a88c6d3a3607c12730ca89c792?size=1024'
@@ -37,12 +45,6 @@ class App extends Component {
               icon='discord'
               href='#'
               description='Add me on Discord'
-              inverted
-            />
-            <Elevator.Button
-              icon='snapchat ghost'
-              href='#'
-              description='Follow me on Snapchat'
               inverted
             />
           </Elevator>

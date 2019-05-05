@@ -17,7 +17,13 @@ interface ElevatorProps {
 const Elevator = (props: ElevatorProps) => {
   return (
     <div className='elevator'>
-      <Image src={props.image} size='medium' circular centered />
+      <Image
+        className='elevator-image'
+        src={props.image}
+        size='medium'
+        circular
+        centered
+      />
       <Header className='elevator-header' inverted={props.inverted}>
         {props.name}
       </Header>
