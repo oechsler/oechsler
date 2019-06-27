@@ -13,3 +13,4 @@ WORKDIR /project/build
 FROM nginx as DEPLOY
 
 COPY --from=BUILD /project/build /usr/share/nginx/html
+COPY --from=BUILD /project/nginx.conf /etc/nginx/conf.d/default.conf
