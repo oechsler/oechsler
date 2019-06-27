@@ -34,7 +34,7 @@ steps:
 
     # Build the Docker image
     - script: |
-          docker build -t registry.oechsler.it/$(registryUser)/$(imageName):latest .
+          docker build -t registry.oechsler.it/$(registryUser)/$(imageName):staging .
       env:
           registryUser: $(registryUser)
           imageName: $(imageName)
@@ -42,7 +42,7 @@ steps:
 
     # Push the built image to the Docker Registry
     - script: |
-          docker push registry.oechsler.it/$(registryUser)/$(imageName):latest
+          docker push registry.oechsler.it/$(registryUser)/$(imageName):staging
       env:
           registryUser: $(registryUser)
           imageName: $(imageName)
