@@ -4,8 +4,8 @@ import './App.css';
 
 class App extends Component {
   constructor() {
-    super();
-    document.title = 'Oechsler';
+    super({});
+    document.title = 'oechsler';
   }
 
   render() {

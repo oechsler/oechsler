@@ -1,44 +1,49 @@
-# Publish to Azure pipeline
-# for the Oechsler Azure Web Service
+# Build on Azure pipeline for Docker
 # Copyright © 2019 - Samuel Oechsler
 
 # Automatic ci triggers
 trigger:
-  branches:
-    include:
-      - master
-  paths:
-    exclude:
-      - docs/*
+    branches:
+        include:
+            - master
+    paths:
+        exclude:
+            - docs/*
 
 # Automatic pull request triggers
 pr:
-  branches:
-    include:
-      - master
-  paths:
-    exclude:
-      - docs/*
+    branches:
+        include:
+            - master
+    paths:
+        exclude:
+            - docs/*
 
 # Build image
 pool:
-  vmImage: ubuntu-16.04
+    vmImage: ubuntu-16.04
 
-# Setup the build environment
 steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '11.x'
-  displayName: 'Set up the NodeJS workspace'
+    # Login to the Docker registry
+    - script: |
+          docker login -u "$(registryUser)" -p "$(registryPassword)" registry.oechsler.it
+      env:
+          registryUser: $(registryUser)
+          registryPassword: $(registryPassword)
+      displayName: 'Login to the Docker Registry'
 
-# Resolve dependencies and build  
-- script: |
-    yarn install
-    yarn build
-  displayName: 'Get dependencies, then build'
-  
-# Artifact publish task
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(System.DefaultWorkingDirectory)/build'
-  displayName: 'Publish build artifacts'
+    # Build the Docker image
+    - script: |
+          docker build -t registry.oechsler.it/$(registryUser)/$(imageName):staging .
+      env:
+          registryUser: $(registryUser)
+          imageName: $(imageName)
+      displayName: 'Build React App in Docker'
+
+    # Push the built image to the Docker Registry
+    - script: |
+          docker push registry.oechsler.it/$(registryUser)/$(imageName):staging
+      env:
+          registryUser: $(registryUser)
+          imageName: $(imageName)
+      displayName: 'Push the built image to the Docker Registry'
