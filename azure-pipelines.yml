@@ -9,15 +9,12 @@ trigger:
     paths:
         exclude:
             - docs/*
+            - README.md
 
 # Automatic pull request triggers
 pr:
-    branches:
-        include:
-            - master
-    paths:
-        exclude:
-            - docs/*
+    - master
+    - dev
 
 # Build image
 pool:
