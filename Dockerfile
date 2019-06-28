@@ -1,4 +1,4 @@
-FROM alpine as BUILD
+FROM alpine:3.10 as BUILD
 
 RUN apk update && \
     apk add nodejs && \
@@ -10,7 +10,7 @@ COPY . .
 RUN yarn && yarn build
 WORKDIR /project/build
 
-FROM nginx as DEPLOY
+FROM nginx:alpine as DEPLOY
 
 COPY --from=BUILD /project/build /usr/share/nginx/html
 COPY --from=BUILD /project/nginx.conf /etc/nginx/conf.d/default.conf
