@@ -1,44 +1,19 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Personal website
 
-## Available Scripts
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9a3bc2c8bd9c4d589df613113e0ed49a)](https://www.codacy.com?utm_source=github.com&utm_medium=referral&utm_content=Boxwrapper/oechsler&utm_campaign=Badge_Grade)
+[![Build Status](https://dev.azure.com/oechsler/oechsler/_apis/build/status/Build%20React%20frontend?branchName=master)](https://dev.azure.com/oechsler/oechsler/_build/latest?definitionId=12&branchName=master)&nbsp;
+![Deployment Status](https://vsrm.dev.azure.com/oechsler/_apis/public/Release/badge/4ea0be20-af1a-48a0-a1e1-7acaf0485ef1/2/2)
 
-In the project directory, you can run:
+The repository contains the code for my personal website. The application is based on the React framework, uses TypeScript and can be built as a Docker image.
 
-### `npm start`
+The resulting Docker image is used for deploying the website in a container.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Building from Source
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+The application can be build either as standalone static site or bundled in a Nginx Docker image.
 
-### `npm test`
+Building the standalone version requires an installation of `Node` and `Yarn`. First dependencies have to be resolved using the `yarn install` command from the cli. Once this is done building a release version can be invoked via `yarn build`. The output of the build is placed into the `/build` directory relative to the project root.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The bundeled Docker version requires only an installation of `Docker`. A build can be invoked using the `docker build` command from the Docker cli. Changes to the configuration of the Nginx server can be made in the `nginx.conf` file located in the project root.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Copyright &copy; 2019 - Samuel Oechsler
