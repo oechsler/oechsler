@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
 import { Menu, Container } from 'semantic-ui-react';
-import Brand from '../brand/Brand';
-import NavigationItem from './NavigationItem';
-import typeFilter from '../../utils/typeFilter';
+import { Brand } from '../brand/Brand';
+import { NavigationItem } from './NavigationItem';
+import { typeFilter } from '../../utils/typeFilter';
 
 import './index.sass';
 
@@ -30,4 +30,4 @@ const Navigation = (props: NavigationProps) => {
 };
 
 Navigation.Item = NavigationItem;
-export default Navigation;
+export { Navigation };

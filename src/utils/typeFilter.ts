@@ -1,22 +1,25 @@
 import React, { ReactNode, ReactElement } from 'react';
 
-export default (
+export type FilteredNode = {} | null | undefined;
+
+export const typeFilter = (
     children: ReactNode,
-    filters: any[],
-    negate: boolean = false
-): any => {
-    let filtered = React.Children.map(children as ReactElement, (elem) => {
+    filters: ReactNode[],
+    include = false,
+): FilteredNode[] | null => {
+    const filtered = React.Children.map(children as ReactElement, (elem) => {
         // Evaluate each element with each filter
-        let valid = false;
+        let filterValidated = false;
         filters.forEach((filter) => {
-            if (valid) return;
-            valid = elem.type.toString() === filter.toString();
+            if (filterValidated || filter == null) return;
+            filterValidated = elem.type.toString() === filter.toString();
         });
 
         // Return the element if the filter is valid
-        if (negate) return !valid ? elem : null;
-        return valid ? elem : null;
+        if (include) return !filterValidated ? elem : null;
+        return filterValidated ? (elem as ReactNode) : null;
     });
+
     // Return undefined if the element array is empty
-    return filtered.length > 0 ? filtered : undefined;
+    return filtered.length > 0 ? filtered : null;
 };

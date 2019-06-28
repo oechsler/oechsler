@@ -2,8 +2,8 @@ import React, { ReactNode } from 'react';
 import { Container, Segment } from 'semantic-ui-react';
 
 import './index.sass';
-import typeFilter from '../../utils/typeFilter';
-import Navigation from '../navigation/Navigation';
+import { typeFilter } from '../../utils/typeFilter';
+import { Navigation } from '../navigation/Navigation';
 
 interface HeroBackground {
     color?: string;
@@ -21,7 +21,7 @@ interface HeroProps {
     children: ReactNode;
 }
 
-const Hero = (props: HeroProps) => {
+export const Hero = (props: HeroProps) => {
     const renderBackground = () => {
         if (props.background)
             return (
@@ -33,15 +33,15 @@ const Hero = (props: HeroProps) => {
                             '-' + props.background.translation + 'px',
                         backgroundSize:
                             'calc(100% * ' + props.background.scale + ')',
+                        filter: 'blur(' + props.background.blur + 'px)',
                         opacity: props.background.opacity,
-                        filter: 'blur(' + props.background.blur + 'px)'
                     }}
                 />
             );
     };
 
     const renderNavigation = () => {
-        let navigation = typeFilter(props.children, [Navigation]);
+        const navigation = typeFilter(props.children, [Navigation]);
         if (navigation)
             return <div className='hero-navigation'>{navigation}</div>;
     };
@@ -53,7 +53,7 @@ const Hero = (props: HeroProps) => {
                 style={{
                     backgroundColor: props.background
                         ? props.background.color
-                        : null
+                        : null,
                 }}
                 vertical
                 inverted={props.inverted}>
@@ -66,5 +66,3 @@ const Hero = (props: HeroProps) => {
         </div>
     );
 };
-
-export default Hero;

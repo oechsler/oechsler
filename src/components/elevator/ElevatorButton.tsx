@@ -8,7 +8,7 @@ interface ElevatorButtonProps {
     inverted?: boolean;
 }
 
-const ElevatorButton = (props: ElevatorButtonProps) => {
+export const ElevatorButton = (props: ElevatorButtonProps) => {
     const renderIcon = () => {
         return (
             <a
@@ -41,5 +41,3 @@ const ElevatorButton = (props: ElevatorButtonProps) => {
         </div>
     );
 };
-
-export default ElevatorButton;

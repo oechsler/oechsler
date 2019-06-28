@@ -9,7 +9,7 @@ interface BrandProps {
     inverted?: boolean;
 }
 
-const Brand = (props: BrandProps) => {
+export const Brand = (props: BrandProps) => {
     return (
         <div className={props.inverted ? 'brand inverted' : 'brand'}>
             <span style={{ fontSize: props.size, color: props.color }}>
@@ -18,5 +18,3 @@ const Brand = (props: BrandProps) => {
         </div>
     );
 };
-
-export default Brand;
