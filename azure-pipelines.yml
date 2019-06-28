@@ -12,9 +12,6 @@ trigger:
 
 # Automatic pull request triggers
 pr:
-    branches:
-        include:
-            - master
     paths:
         exclude:
             - docs/*
