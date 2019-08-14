@@ -21,6 +21,7 @@ $color: #fda900
             margin: 0
             margin-left: -1em
             margin-right: -1em
+            min-width: 260px
 
             border-radius: $border-radius
             box-shadow: 0px 6px 18px transparentize(black, 0.95)
@@ -59,3 +60,9 @@ $color: #fda900
 
         > .ui.card:nth-child(even):hover
             transform: rotateZ(2deg)
+
+@media only screen and (max-width: 1199px)
+    .projects
+
+        .ui.cards
+            zoom: 0.95
