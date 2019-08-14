@@ -23,7 +23,7 @@ export const Home = () => {
                 }}>
                 <Navigation>
                     <Navigation.Item href='#about' text='About me.' />
-                    <Navigation.Item href='#projects' text='Projects.' />
+                    <Navigation.Item href='#projects' text='Recent Projects.' />
                 </Navigation>
                 <Elevator
                     image='https://secure.gravatar.com/avatar/760c95a88c6d3a3607c12730ca89c792?size=1024'
