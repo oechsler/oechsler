@@ -1,9 +1,9 @@
 import React, { ReactNode } from 'react';
 import { Container, Segment } from 'semantic-ui-react';
-
-import './index.sass';
-import { typeFilter } from '../../utils/typeFilter';
 import { Navigation } from '../navigation/Navigation';
+
+import { typeFilter } from '../../utils/typeFilter';
+import './index.sass';
 
 interface HeroBackground {
     color?: string;

@@ -1,18 +1,16 @@
 import React from 'react';
-import { SemanticCOLORS } from 'semantic-ui-react/dist/commonjs/generic';
 
 import './index.sass';
 
 interface BrandProps {
     size: number;
-    color?: SemanticCOLORS;
     inverted?: boolean;
 }
 
 export const Brand = (props: BrandProps) => {
     return (
         <div className={props.inverted ? 'brand inverted' : 'brand'}>
-            <span style={{ fontSize: props.size, color: props.color }}>
+            <span style={{ fontSize: props.size }}>
                 <strong>Oechsler</strong>.it
             </span>
         </div>
