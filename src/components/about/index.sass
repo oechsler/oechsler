@@ -9,6 +9,19 @@
         p, span, strong
             display: block
 
+        $link-color: #fda900
+
+        a
+            color: $link-color
+
+            transition: color 0.2s ease
+
+        a:hover
+            color: lighten($link-color, 10%)
+
+        a:active
+            color: darken($link-color, 5%)
+
     .ui.grid.about-langs
         font-size: 48px
 
