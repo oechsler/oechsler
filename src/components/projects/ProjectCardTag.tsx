@@ -14,10 +14,10 @@ const ProjectCardTag = (props: ProjectCardTagProps) => {
     const labelsToDeviconName = (label: ProjectCardTagLabels) => {
         const labelMap: Record<string, string> = {
             'C#': 'visualstudio',
-            macOS: 'apple',
-            iOS: 'apple',
-            Shell: 'terminal',
             GitHub: 'github_badge',
+            Shell: 'terminal',
+            iOS: 'apple',
+            macOS: 'apple',
         };
         const result = labelMap[label];
 
