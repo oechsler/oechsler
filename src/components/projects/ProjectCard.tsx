@@ -13,7 +13,9 @@ interface ProjectCardProps {
 
 const ProjectCard = (props: ProjectCardProps) => {
     const renderTags = () =>
-        props.tags.map((label) => <ProjectCardTag label={label} />);
+        props.tags.map((label, index) => (
+            <ProjectCardTag key={index} label={label} />
+        ));
 
     return (
         <Card href={props.link} as={props.link ? 'a' : null}>
