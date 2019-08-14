@@ -1,0 +1,61 @@
+$color: #fda900
+
+.projects
+
+    h3
+        span:first-child
+            color: $color
+
+        span:nth-child(2)
+            color: lighten($color, 5%)
+
+        span:nth-child(3)
+            color: lighten($color, 10%)
+
+    .ui.cards
+        margin-top: 4rem
+
+        > .ui.card
+            $border-radius: 16px
+
+            margin: 0
+            margin-left: -1em
+            margin-right: -1em
+
+            border-radius: $border-radius
+            box-shadow: 0px 6px 18px transparentize(black, 0.95)
+
+            transform: perspective(50em) rotateY(10deg)
+
+            transition: all .6s ease
+
+            img
+                border-radius: $border-radius $border-radius 0 0 !important
+
+            .content
+                text-align: left
+
+                border-top: none
+
+                .description
+                    min-height: 3em
+
+            .ui.labels
+                margin-top: 0.8em
+
+                i
+                    padding-right: 0.3em
+
+                    font-size: 1.2em
+
+                    display: inline-block
+
+                    transform: translateY(0.12em)
+
+        > .ui.card:hover
+            margin: 0 4em
+
+            transform: rotateZ(-2deg)
+
+        > .ui.card:nth-child(even):hover
+            transform: rotateZ(2deg)
