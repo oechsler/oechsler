@@ -9,6 +9,7 @@ import moment from 'moment';
 
 import thumbOverview from '../../images/thumb-overview.jpg';
 import thumbPlank from '../../images/thumb-plank.jpg';
+import { Footer } from '../../components/footer/Footer';
 
 export const Home = () => {
     return (
@@ -19,8 +20,7 @@ export const Home = () => {
                     color: '#fda900',
                     image: thumbOverview,
                     opacity: 0.1,
-                }}
-                inverted>
+                }}>
                 <Navigation>
                     <Navigation.Item href='#about' text='About me.' />
                     <Navigation.Item href='#projects' text='Projects.' />
@@ -89,6 +89,7 @@ export const Home = () => {
             <Page anchor='projects' textAlign='center'>
                 <Projects />
             </Page>
+            <Footer inverted />
         </div>
     );
 };

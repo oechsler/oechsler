@@ -1,36 +1,38 @@
-.ui.vertical.segment.hero-segment
-    padding: 0
+.hero
 
-    min-height: 100vh
-    max-height: 100vh
+    .ui.vertical.segment.hero-segment
+        padding: 0
 
-    display: flex
-    align-items: center
-    justify-content: center
-    flex-direction: column
+        min-height: 100vh
+        max-height: 100vh
 
-    .hero-background
-        position: absolute
-        min-width: calc(100% - 10px)
-        min-height: calc(100% - 10px)
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: column
 
-        filter: grayscale(100%)
-        background-position: center
-        background-size: cover
+        .hero-background
+            position: absolute
+            min-width: calc(100% - 10px)
+            min-height: calc(100% - 10px)
 
-        z-index: 0
+            filter: grayscale(100%)
+            background-position: center
+            background-size: cover
 
-    .hero-navigation
-        position: absolute
-        top: 0px
+            z-index: 0
 
-        z-index: 1
+        .hero-navigation
+            position: absolute
+            top: 0px
 
-    .hero-container
-        z-index: 1
+            z-index: 1
 
-.ui.vertical.segment.hero-segment
-    background-color: white
+        .hero-container
+            z-index: 1
 
-.ui.inverted.vertical.segment.hero-segment
-    background-color: black
+    .ui.vertical.segment.hero-segment
+        background-color: white
+
+    .ui.inverted.vertical.segment.hero-segment
+        background-color: black
