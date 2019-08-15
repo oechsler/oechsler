@@ -22,7 +22,8 @@ const Footer = (props: FooterProps) => {
                             <Grid.Column>
                                 <Brand size={20} />
                                 <p>
-                                    Created with React and &#9829; in Pforzheim
+                                    Created with React and &#9829;{' '}
+                                    <span>in Pforzheim</span>
                                 </p>
                                 <p>Copyright &copy; 2019 Samuel Oechsler</p>
                             </Grid.Column>

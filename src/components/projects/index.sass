@@ -18,9 +18,7 @@ $color: #fda900
         > .ui.card
             $border-radius: 16px
 
-            margin: 0
-            margin-left: -1em
-            margin-right: -1em
+            margin: 0 -1em
             min-width: 260px
 
             border-radius: $border-radius
@@ -66,3 +64,45 @@ $color: #fda900
 
         .ui.cards
             zoom: 0.95
+
+@media only screen and (max-width: 1366px)
+    .projects
+
+        .ui.cards
+
+            > .ui.card:hover, > .ui.card:nth-child(even):hover
+                margin: 0 -1em
+
+                transform: perspective(50em) rotateY(10deg)
+
+@media only screen and (max-width: 991px)
+    .projects
+
+        h3.ui.header
+            margin-top: 0
+
+            font-size: 1.1em
+
+        .ui.cards
+            zoom: 0.6
+
+            > .ui.card
+
+                .content .description
+                    min-height: 2em
+                    line-height: 1.2em
+
+                .ui.labels
+                    margin-top: 0.25em
+
+                    .label
+                        padding-top: 0
+
+                        font-size: 0.62rem
+
+                        border-radius: 0.2rem
+
+            > .ui.card:hover, > .ui.card:nth-child(even):hover
+                margin: 0 -1em
+
+                transform: perspective(50em) rotateY(10deg)

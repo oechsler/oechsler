@@ -1,4 +1,4 @@
-.ui.container
+.about
 
     .ui.grid > .row
         justify-content: center
@@ -44,7 +44,7 @@
                     top: 0.3em
 
 @media only screen and (max-width: 1199px)
-    .ui.container
+    .about
 
         .about-imprint
             p:last-child > span
@@ -55,3 +55,22 @@
                 margin-bottom: 0.2em
 
                 display: block
+
+@media only screen and (max-width:  991px)
+    .about
+
+        .ui.grid > .row
+
+                p
+                    font-size: inherit
+
+                > .column
+
+                    .about-langs
+                        position: relative
+                        width: calc(150% + 2rem)
+
+                > .four.wide.column
+                    margin-top: calc(28px + 1em)
+
+                    box-sizing: initial
