@@ -46,6 +46,11 @@
 @media only screen and (max-width: 1199px)
     .about
 
+        .ui.grid > .row
+
+            > .four.wide.column
+                margin-top: calc(28px + 1em)
+
         .about-imprint
             p:last-child > span
                 color: transparent
@@ -71,6 +76,48 @@
                         width: calc(150% + 2rem)
 
                 > .four.wide.column
-                    margin-top: calc(28px + 1em)
-
                     box-sizing: initial
+
+@media only screen and (max-width:  767px)
+    .about
+
+        .ui.grid > .row
+
+            > .column
+
+                .about-langs
+                    width: 110%
+
+                    font-size: 40px
+
+            > .four.wide.column
+
+                .about-imprint
+                    margin-top: 3rem
+
+                    display: flex
+                    flex-wrap: wrap
+                    align-items: flex-end
+                    float: initial
+
+                    p
+                        margin: 0 1.5rem 0 0
+
+                    p:last-child
+                        margin: 0
+
+                .about-imprint::before
+                    position: absolute
+                    top: 1rem
+                    left: 1rem
+
+                    font-family: Lato
+                    font-size: 1.28rem
+                    font-weight: 700
+
+                    display: block
+
+                    content: "Contact"
+
+@media only screen and (max-width:  573px)
+    .about
