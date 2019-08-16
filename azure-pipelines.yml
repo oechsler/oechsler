@@ -16,9 +16,9 @@ pr:
     - master
     - dev
 
-# Build image
+# Build pool (self hosted)
 pool:
-    vmImage: ubuntu-16.04
+    name: 'Default'
 
 steps:
     # Login to the Docker registry
