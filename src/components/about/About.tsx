@@ -15,7 +15,7 @@ interface AboutProps {
 const About = (props: AboutProps) => {
     return (
         <div className='about'>
-            <Grid columns={2}>
+            <Grid columns={2} stackable>
                 <Grid.Row>
                     <Grid.Column width={11}>
                         <Header as='h1'>About me.</Header>

@@ -41,14 +41,46 @@
                 .footer-azure
                     opacity: 0.9
 
-                    img
-                        width: 8em
-
-                        filter: brightness(0)
-
                     p
                         margin: 0 0 0.4em 0
                         padding: 0
 
                         font-weight: bold
                         color: black
+
+                    img
+                        width: 8em
+
+                        filter: brightness(0)
+
+@media only screen and (max-width: 991px)
+    .footer
+
+        p:first-of-type
+            font-size: 0.85em
+
+            span
+                display: block
+
+@media only screen and (max-width:  766px)
+    .footer
+
+        p:first-of-type
+
+            span
+                display: inline
+
+        .ui.vertical.segment.footer-segment
+
+            .footer-container
+                padding: 2em 2em
+
+            .ui.grid
+
+                .column:first-child
+                    width: 100%
+
+                .column:last-child
+                    height: 0px
+                    display: none
+                    visibility: hidden
