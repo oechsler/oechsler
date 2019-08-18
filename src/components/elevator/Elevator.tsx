@@ -9,7 +9,7 @@ interface ElevatorProps {
     image: string;
     name: string;
     age: number;
-    status?: ReactNode;
+    status: ReactNode;
     inverted?: boolean;
     children?: ReactNode;
 }
@@ -28,10 +28,7 @@ const Elevator = (props: ElevatorProps) => {
                 {props.name}
             </Header>
             <Header className='elevator-sub' inverted={props.inverted}>
-                <strong>{props.age}.</strong>
-                &nbsp;
-                {props.status}
-                {props.status !== undefined ? '.' : null}
+                <strong>{props.age}.</strong> {props.status}.
             </Header>
             <Grid
                 className='elevator-buttons'

@@ -1,3 +1,3 @@
-import { ProjectCardTagColors } from './ProjectCardTagColors';
+import { ProjectsCardTagColors } from './ProjectCardTagColors';
 
-export type ProjectCardTagLabels = keyof typeof ProjectCardTagColors;
+export type ProjectsCardTagLabels = keyof typeof ProjectsCardTagColors;

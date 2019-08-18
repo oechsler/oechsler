@@ -1,20 +1,20 @@
 import React from 'react';
 import { Card, Image, Label } from 'semantic-ui-react';
-import { ProjectCardTag } from './ProjectCardTag';
-import { ProjectCardTagLabels } from './ProjectCardTagLabels';
+import { ProjectsCardTag } from './ProjectsCardTag';
+import { ProjectsCardTagLabels } from './ProjectCardTagLabels';
 
-interface ProjectCardProps {
+interface ProjectsCardProps {
     link?: string;
     image: string;
     title: string;
     description: string;
-    tags: ProjectCardTagLabels[];
+    tags: ProjectsCardTagLabels[];
 }
 
-const ProjectCard = (props: ProjectCardProps) => {
+const ProjectsCard = (props: ProjectsCardProps) => {
     const renderTags = () =>
         props.tags.map((label, index) => (
-            <ProjectCardTag key={index} label={label} />
+            <ProjectsCardTag key={index} label={label} />
         ));
 
     return (
@@ -29,4 +29,4 @@ const ProjectCard = (props: ProjectCardProps) => {
     );
 };
 
-export { ProjectCard };
+export { ProjectsCard };

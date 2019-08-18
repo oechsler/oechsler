@@ -1,4 +1,4 @@
-export enum ProjectCardTagColors {
+export enum ProjectsCardTagColors {
     // Web Frameworks & Co.
     Angular = 'red',
     React = 'teal',
