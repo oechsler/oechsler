@@ -8,9 +8,19 @@ interface NavigationItemProps {
 }
 
 export const NavigationItem = (props: NavigationItemProps) => {
-    const renderLink = () => {
+    const renderAnchorLink = () => {
+        const handleClick = (
+            event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+        ) => {
+            const id = event.currentTarget.href.split('#')[1];
+            const elem = document.getElementById(id);
+
+            if (elem !== null) elem.scrollIntoView({ behavior: 'smooth' });
+            event.preventDefault();
+        };
+
         return (
-            <a href={props.href}>
+            <a href={props.href} onClick={(e) => handleClick(e)}>
                 <Menu.Item link>{props.text}</Menu.Item>
             </a>
         );
@@ -26,7 +36,9 @@ export const NavigationItem = (props: NavigationItemProps) => {
 
     return (
         <div className='navigation-item'>
-            {props.href.startsWith('#') ? renderLink() : renderRouterLink()}
+            {props.href.startsWith('#')
+                ? renderAnchorLink()
+                : renderRouterLink()}
         </div>
     );
 };

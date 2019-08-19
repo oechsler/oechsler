@@ -34,12 +34,14 @@ export const Home = () => {
     const renderElevatorButtons = () => {
         return [
             <Elevator.Button
+                key={0}
                 icon='github'
                 href='http://github.com/Boxwrapper'
                 description='Fork me on GitHub'
                 inverted
             />,
             <Elevator.Button
+                key={1}
                 icon='xbox'
                 href='http://live.xbox.com/de-DE/Profile?gamertag=MuratYilderim'
                 description='Add me on Xbox Live'
@@ -63,12 +65,12 @@ export const Home = () => {
 
     const renderAboutLanguages = () => {
         return [
-            <About.Lang lang='react' />,
-            <About.Lang lang='sass' />,
-            <About.Lang lang='go' />,
-            <About.Lang lang='swift' />,
-            <About.Lang lang='visualstudio' />,
-            <About.Lang lang='docker' />,
+            <About.Lang key={0} lang='react' />,
+            <About.Lang key={1} lang='sass' />,
+            <About.Lang key={2} lang='go' />,
+            <About.Lang key={3} lang='swift' />,
+            <About.Lang key={4} lang='visualstudio' />,
+            <About.Lang key={5} lang='docker' />,
         ];
     };
 
@@ -89,6 +91,7 @@ export const Home = () => {
     const renderProjectCards = () => {
         return [
             <Projects.Card
+                key={0}
                 link='https://github.com/Boxwrapper/azureblob'
                 image={projectAzureblob}
                 title='Azure Blob'
@@ -96,6 +99,7 @@ export const Home = () => {
                 tags={['Go', 'GitHub']}
             />,
             <Projects.Card
+                key={1}
                 link='https://github.com/Boxwrapper/dotfiles'
                 image={dotfiles}
                 title='Dotfiles'
@@ -103,6 +107,7 @@ export const Home = () => {
                 tags={['Shell', 'GitHub']}
             />,
             <Projects.Card
+                key={2}
                 link='https://github.com/Boxwrapper/BareSharp'
                 image={projectBaresharp}
                 title='Bare Sharp'

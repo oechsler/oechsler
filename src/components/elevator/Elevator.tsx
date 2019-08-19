@@ -1,4 +1,4 @@
-import React, { Component, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { Header, Image, Grid } from 'semantic-ui-react';
 import { ElevatorButton } from './ElevatorButton';
 import { typeFilter } from '../../utils/typeFilter';

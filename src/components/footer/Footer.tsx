@@ -1,4 +1,4 @@
-import React, { useRef, useContext, useEffect } from 'react';
+import React, { useRef, useContext, useEffect, MutableRefObject } from 'react';
 import { Segment, Container, Grid } from 'semantic-ui-react';
 import { Brand } from '../brand/Brand';
 
@@ -8,22 +8,13 @@ import { RouterStore } from '../../stores/RouterStore';
 
 interface FooterProps {
     inverted?: boolean;
+
+    element?: MutableRefObject<HTMLDivElement | null>;
 }
 
 const Footer = (props: FooterProps) => {
-    const routerContext = useContext(RouterStore.Context);
-
-    const footerElement = useRef<HTMLDivElement | null>(null);
-
-    useEffect(() => {
-        const elem = footerElement.current;
-        if (elem === null) return;
-
-        routerContext.setFooterHeight(elem.clientHeight);
-    }, []);
-
     return (
-        <div className='footer' ref={footerElement}>
+        <div className='footer' ref={props.element}>
             <Segment
                 className='footer-segment'
                 vertical

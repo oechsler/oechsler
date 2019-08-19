@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { RouterStore } from '../stores/RouterStore';
-import { Footer } from '../components/footer/Footer';
+import { FooterContainer } from '../containers/FooterContainer';
+import { TopContainer } from '../containers/TopContainer';
 
 // Route components
 import { Home } from './home/Home';
@@ -16,7 +17,8 @@ export const Router = () => {
                     <Route render={() => <Error code={404} />} />
                 </Switch>
 
-                <Footer inverted />
+                <FooterContainer />
+                <TopContainer />
             </RouterStore>
         </BrowserRouter>
     );
