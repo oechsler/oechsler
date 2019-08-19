@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { Header, Grid, Card, Image, Label } from 'semantic-ui-react';
+import { Header, Card } from 'semantic-ui-react';
 import { ProjectsCard } from './ProjectsCard';
 
 import './index.sass';

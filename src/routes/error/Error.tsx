@@ -1,11 +1,10 @@
-import React, { useEffect, useState, useContext, useLayoutEffect } from 'react';
+import React, { useState, useContext, useLayoutEffect } from 'react';
 import { Page } from '../../components/page/Page';
 import { RouterStore } from '../../stores/RouterStore';
 import { Header, Icon } from 'semantic-ui-react';
 import { STATUS_CODES } from 'http';
 
 import './index.sass';
-import { Link } from 'react-router-dom';
 
 interface ErrorProps {
     code: number;

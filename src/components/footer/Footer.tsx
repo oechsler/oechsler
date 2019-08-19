@@ -1,4 +1,4 @@
-import React, { useRef, useContext, useEffect, MutableRefObject } from 'react';
+import React, { MutableRefObject } from 'react';
 import { Segment, Container, Grid } from 'semantic-ui-react';
 import { Brand } from '../brand/Brand';
 

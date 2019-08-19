@@ -1,4 +1,4 @@
-import React, { ReactNode, useRef } from 'react';
+import React, { ReactNode } from 'react';
 import { Segment, Container } from 'semantic-ui-react';
 
 import './index.sass';

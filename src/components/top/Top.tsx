@@ -1,7 +1,6 @@
-import React, { useEffect, useState, useRef, useContext } from 'react';
+import React from 'react';
 import { useSpring, animated } from 'react-spring';
 import { Label, Icon } from 'semantic-ui-react';
-import { RouterStore } from '../../stores/RouterStore';
 
 import './index.sass';
 
