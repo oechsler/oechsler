@@ -1,14 +1,15 @@
-import React from 'react';
-import { Header, Grid, Card, Image, Label } from 'semantic-ui-react';
-import { ProjectCard } from './ProjectCard';
+import React, { ReactNode } from 'react';
+import { Header, Card } from 'semantic-ui-react';
+import { ProjectsCard } from './ProjectsCard';
 
 import './index.sass';
+import { typeFilter } from '../../utils/typeFilter';
 
-import azureblob from '../../images/project-azureblob.jpg';
-import baresharp from '../../images/project-baresharp.jpg';
-import dotfiles from '../../images/project-dotfiles.jpg';
+interface ProjectsProps {
+    children?: ReactNode;
+}
 
-const Projects = () => {
+const Projects = (props: ProjectsProps) => {
     return (
         <div className='projects'>
             <Header as='h1'>Recent Projects.</Header>
@@ -17,30 +18,11 @@ const Projects = () => {
                 <span>other stuff</span> that I've been part of
             </Header>
             <Card.Group centered itemsPerRow={3}>
-                <ProjectCard
-                    link='https://github.com/Boxwrapper/azureblob'
-                    image={azureblob}
-                    title='Azure Blob'
-                    description='Library used for abstraction of Azure Blob Storage in my golang projects.'
-                    tags={['Go', 'GitHub']}
-                />
-                <ProjectCard
-                    link='https://github.com/Boxwrapper/dotfiles'
-                    image={dotfiles}
-                    title='Dotfiles'
-                    description='Automatic install and maintainance of user configs and packages.'
-                    tags={['Shell', 'GitHub']}
-                />
-                <ProjectCard
-                    link='https://github.com/Boxwrapper/BareSharp'
-                    image={baresharp}
-                    title='Bare Sharp'
-                    description='Cross-Platform 2d sprite framework living on top of MonoGame.'
-                    tags={['C#', 'GitHub']}
-                />
+                {typeFilter(props.children, [ProjectsCard])}
             </Card.Group>
         </div>
     );
 };
 
+Projects.Card = ProjectsCard;
 export { Projects };

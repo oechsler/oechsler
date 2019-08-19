@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Icon, Popup, Grid, SemanticICONS } from 'semantic-ui-react';
 
 interface ElevatorButtonProps {

@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { MutableRefObject } from 'react';
 import { Segment, Container, Grid } from 'semantic-ui-react';
 import { Brand } from '../brand/Brand';
 
 import './index.sass';
 import { FooterAzure } from './FooterAzure';
+import { RouterStore } from '../../stores/RouterStore';
 
 interface FooterProps {
     inverted?: boolean;
+
+    element?: MutableRefObject<HTMLDivElement | null>;
 }
 
 const Footer = (props: FooterProps) => {
     return (
-        <div className='footer'>
+        <div className='footer' ref={props.element}>
             <Segment
                 className='footer-segment'
                 vertical

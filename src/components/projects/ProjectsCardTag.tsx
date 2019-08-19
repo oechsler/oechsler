@@ -1,17 +1,17 @@
 import React from 'react';
 import { Label } from 'semantic-ui-react';
-import { ProjectCardTagColors } from './ProjectCardTagColors';
-import { ProjectCardTagLabels } from './ProjectCardTagLabels';
+import { ProjectsCardTagColors } from './ProjectCardTagColors';
+import { ProjectsCardTagLabels } from './ProjectCardTagLabels';
 
-interface ProjectCardTagProps {
-    label: ProjectCardTagLabels;
+interface ProjectsCardTagProps {
+    label: ProjectsCardTagLabels;
 }
 
-const ProjectCardTag = (props: ProjectCardTagProps) => {
+const ProjectsCardTag = (props: ProjectsCardTagProps) => {
     const label = props.label;
-    const color = ProjectCardTagColors[label];
+    const color = ProjectsCardTagColors[label];
 
-    const labelsToDeviconName = (label: ProjectCardTagLabels) => {
+    const labelsToDeviconName = (label: ProjectsCardTagLabels) => {
         const labelMap: Record<string, string> = {
             'C#': 'visualstudio',
             GitHub: 'github_badge',
@@ -32,4 +32,4 @@ const ProjectCardTag = (props: ProjectCardTagProps) => {
     );
 };
 
-export { ProjectCardTag };
+export { ProjectsCardTag };

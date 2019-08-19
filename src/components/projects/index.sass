@@ -14,6 +14,7 @@ $color: #fda900
 
     .ui.cards
         margin-top: 4rem
+        margin-bottom: 1rem
 
         > .ui.card
             $border-radius: 16px
@@ -61,12 +62,6 @@ $color: #fda900
         > .ui.card:nth-child(even):hover
             transform: rotateZ(2deg)
 
-@media only screen and (max-width: 1199px)
-    .projects
-
-        .ui.cards
-            zoom: 0.95
-
 @media only screen and (max-width: 1366px)
     .projects
 
@@ -77,6 +72,12 @@ $color: #fda900
 
                 transform: perspective(50em) rotateY(10deg)
 
+@media only screen and (max-width: 1199px)
+    .projects
+
+        .ui.cards
+            zoom: 0.95
+
 @media only screen and (max-width: 991px)
     .projects
 
@@ -86,6 +87,8 @@ $color: #fda900
             font-size: 1.1em
 
         .ui.cards
+            margin-bottom: 0
+
             zoom: 0.6
 
             > .ui.card

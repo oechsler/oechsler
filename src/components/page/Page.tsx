@@ -1,15 +1,16 @@
 import React, { ReactNode } from 'react';
-import { Segment, Container, StrictContainerProps } from 'semantic-ui-react';
+import { Segment, Container } from 'semantic-ui-react';
 
 import './index.sass';
 
 interface PageProps {
     anchor?: string;
+    background?: string;
+    height?: number | string;
     inverted?: boolean;
     textAlign?: 'left' | 'center' | 'right' | 'justified';
-    background?: string;
-    height?: number;
 
+    className?: string;
     children?: ReactNode;
 }
 
@@ -19,11 +20,11 @@ export const Page = (props: PageProps) => {
             <Segment
                 vertical
                 inverted={props.inverted}
-                style={{
-                    backgroundImage: `url(${props.background})`,
-                    minHeight: props.height,
-                }}>
-                <Container textAlign={props.textAlign}>
+                style={{ backgroundImage: `url(${props.background})` }}>
+                <Container
+                    style={{ minHeight: props.height }}
+                    textAlign={props.textAlign}
+                    className={props.className}>
                     {props.children}
                 </Container>
             </Segment>
