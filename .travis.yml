@@ -9,7 +9,7 @@ branches:
         - travis-ci
 
 script:
-    - echo "$REPO_PASSWORD" | docker login -u "$REPO_USERNAME" --password-stdin registry.oechsler.it
-    - docker build . -t registry.oechsler.it/samuel/website:latest
-    - docker push registry.oechsler.it/samuel/website:latest
+    - echo "$REPO_PASSWORD" | docker login -u "$REPO_USERNAME" --password-stdin "$REPO_URL"
+    - docker build . -t "$REPO_URL/$REPO_USERNAME/website:latest"
+    - docker push "$REPO_URL/$REPO_USERNAME/website:latest"
     
