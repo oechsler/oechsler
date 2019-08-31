@@ -1,6 +1,15 @@
 dist: bionic
 services:
     - docker
+    
+branches:
+    only:
+        - master
+        - dev
+        - travis-ci
 
 script:
-    - docker build .
+    - echo "$REPO_PASSWORD" | docker login -u "$REPO_USERNAME" --password-stdin $REPO_URL
+    - docker build . -t $REPO_URL/website:latest
+    - docker push $REPO_URL/website:latest
+    
