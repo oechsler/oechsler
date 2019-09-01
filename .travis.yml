@@ -1,0 +1,53 @@
+language: minimal
+dist: bionic
+services:
+  - docker
+
+branches:
+  only:
+    - master
+    - dev
+    # Trigger a build if changes
+    # are made to the pipeline itself
+    - travis-ci
+
+jobs:
+  include:
+    # Build docker image everytime
+    # a build gets triggered
+    - stage: build
+      name: "Build & push Docker image"
+      script:
+        - echo "$REPO_PASSWORD" | docker login -u "$REPO_USERNAME" --password-stdin "$REPO_URL"
+        - docker build . -t "$REPO_URL/$REPO_USERNAME/website:staging"
+        - docker push "$REPO_URL/$REPO_USERNAME/website:staging"
+    # Re-tag staging image to latest
+    # when a build on master is triggered
+    - stage: re-tag
+      name: "Re-tag & push built image"
+      script:
+        - echo "$REPO_PASSWORD" | docker login -u "$REPO_USERNAME" --password-stdin "$REPO_URL"
+        - docker pull "$REPO_URL/$REPO_USERNAME/website:staging"
+        - docker build tag "$REPO_URL/$REPO_USERNAME/website:staging" "$REPO_URL/$REPO_USERNAME/website:latest"
+        - docker push "$REPO_URL/$REPO_USERNAME/website:latest"
+    # Scripts for deploying the built image
+    - stage: deploy
+      name: "Deploy on Docker Swarm"
+      deploy:
+        # Deploy to staging during development
+        - provider: script
+          script: curl -f https://portainer.oechsler.it/api/webhooks/589bd839-e6a1-4edf-87d7-05578aea862f
+          on:
+            branch: dev
+        # Deploy to production on release / master
+        - provider: script
+          script: curl -f https://portainer.oechsler.it/api/webhooks/62ab92d6-6bda-4b10-8ef5-748515166ce4
+          on:
+            branch: master
+
+stages:
+  - build
+  - name: re-tag
+    if: type = push AND branch = master
+  - name: deploy
+    if: type = push AND (branch = master OR branch = dev)
