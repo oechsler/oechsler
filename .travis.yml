@@ -36,12 +36,12 @@ jobs:
       deploy:
         # Deploy to staging during development
         - provider: script
-          script: curl -f https://portainer.oechsler.it/api/webhooks/589bd839-e6a1-4edf-87d7-05578aea862f
+          script: curl -X POST https://portainer.oechsler.it/api/webhooks/589bd839-e6a1-4edf-87d7-05578aea862f
           on:
             branch: dev
         # Deploy to production on release / master
         - provider: script
-          script: curl -f https://portainer.oechsler.it/api/webhooks/62ab92d6-6bda-4b10-8ef5-748515166ce4
+          script: curl -X POST https://portainer.oechsler.it/api/webhooks/62ab92d6-6bda-4b10-8ef5-748515166ce4
           on:
             branch: master
 
