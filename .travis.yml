@@ -11,22 +11,38 @@ branches:
 
 jobs:
     include:
+        # Build docker image everytime
+        # a build gets triggered
         - stage: build
-          name: "Build Docker Image"
+          name: "Build & push Docker image"
           script:
               - echo "$REPO_PASSWORD" | docker login -u "$REPO_USERNAME" --password-stdin "$REPO_URL"
-              - docker build . -t "$REPO_URL/$REPO_USERNAME/website:latest"
+              - docker build . -t "$REPO_URL/$REPO_USERNAME/website:staging"
+              - docker push "$REPO_URL/$REPO_USERNAME/website:staging"
+        # Retag staging image to latest
+        # when a build on master is triggered
+        - stage: retag
+          name: "Retag built image"
+          script:
+              - docker build tag "$REPO_URL/$REPO_USERNAME/website:staging" "$REPO_URL/$REPO_USERNAME/website:latest"
               - docker push "$REPO_URL/$REPO_USERNAME/website:latest"
+        # Scripts for deploying the built image
         - stage: deploy
-          name: "Deploy to Docker Registry"
+          name: "Deploy on Docker Swarm"
           deploy:
               # Deploy to staging during development
               - provider: script
-                script: echo "Staging goes here"
+                script: "echo 'TODO: Staging goes here ...'"
                 on:
                     branch: dev
-              # Deploy to production on release
+              # Deploy to production on release / master
               - provider: script
-                script: echo "Production goes here"
+                script: "echo 'TODO: Production goes here ...'"
                 on:
                     branch: master
+
+stages:
+    - build
+    - name: retag
+      if: branch = master
+    - deploy
