@@ -48,6 +48,6 @@ jobs:
 stages:
   - build
   - name: re-tag
-    if: branch = master
+    if: type = push AND branch = master
   - name: deploy
-    if: branch = master OR branch = dev
+    if: type = push AND (branch = master OR branch = dev)

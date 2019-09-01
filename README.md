@@ -1,8 +1,7 @@
 # Personal website
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9a3bc2c8bd9c4d589df613113e0ed49a)](https://www.codacy.com?utm_source=github.com&utm_medium=referral&utm_content=Boxwrapper/oechsler&utm_campaign=Badge_Grade)
-[![Build Status](https://dev.azure.com/oechsler/oechsler/_apis/build/status/Build%20React%20frontend?branchName=master)](https://dev.azure.com/oechsler/oechsler/_build/latest?definitionId=12&branchName=master)&nbsp;
-![Deployment Status](https://vsrm.dev.azure.com/oechsler/_apis/public/Release/badge/4ea0be20-af1a-48a0-a1e1-7acaf0485ef1/2/2)
+[![Build Status](https://travis-ci.com/Boxwrapper/oechsler.svg?token=n5VfjbXpcxkjTHSRuvoo&branch=master)](https://travis-ci.com/Boxwrapper/oechsler)
 
 The repository contains the code for my personal website. The application is based on the React framework, uses TypeScript and can be built as a Docker image.
 
