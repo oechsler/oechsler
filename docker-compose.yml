@@ -1,0 +1,37 @@
+version: "3.7"
+
+services:
+  production:
+    image: registry.oechsler.it/samuel/website:latest
+    networks:
+      - traefik_public
+    deploy:
+      labels:
+        - traefik.enable=true
+        - traefik.http.middlewares.website-production-redirect.redirectscheme.scheme=https
+        - traefik.http.routers.website-production.entrypoints=web
+        - traefik.http.routers.website-production.rule=Host(`${HOSTNAME}`)||Host(`www.${HOSTNAME}`)
+        - traefik.http.routers.website-production.middlewares=website-production-redirect@docker
+        - traefik.http.routers.website-production-secure.entrypoints=websecure
+        - traefik.http.routers.website-production-secure.rule=Host(`${HOSTNAME}`)||Host(`www.${HOSTNAME}`)
+        - traefik.http.routers.website-production-secure.tls.certresolver=default
+        - traefik.http.services.website-production.loadbalancer.server.port=80
+  staging:
+    image: registry.oechsler.it/samuel/website:staging
+    networks:
+      - traefik_public
+    deploy:
+      labels:
+        - traefik.enable=true
+        - traefik.http.middlewares.website-staging-redirect.redirectscheme.scheme=https
+        - traefik.http.routers.website-staging.entrypoints=web
+        - traefik.http.routers.website-staging.rule=Host(`staging.${HOSTNAME}`)
+        - traefik.http.routers.website-staging.middlewares=website-staging-redirect@docker
+        - traefik.http.routers.website-staging-secure.entrypoints=websecure
+        - traefik.http.routers.website-staging-secure.rule=Host(`staging.${HOSTNAME}`)
+        - traefik.http.routers.website-staging-secure.tls.certresolver=default
+        - traefik.http.services.website-staging.loadbalancer.server.port=80
+
+networks:
+  traefik_public:
+    external: true
