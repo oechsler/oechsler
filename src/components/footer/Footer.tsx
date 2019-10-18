@@ -1,10 +1,9 @@
 import React, { MutableRefObject } from 'react';
 import { Segment, Container, Grid } from 'semantic-ui-react';
 import { Brand } from '../brand/Brand';
+import { FooterAzure } from './FooterAzure';
 
 import './index.sass';
-import { FooterAzure } from './FooterAzure';
-import { RouterStore } from '../../stores/RouterStore';
 
 interface FooterProps {
     inverted?: boolean;
@@ -28,7 +27,10 @@ const Footer = (props: FooterProps) => {
                                     Created with React and &#9829;{' '}
                                     <span>in Pforzheim</span>
                                 </p>
-                                <p>Copyright &copy; 2019 Samuel Oechsler</p>
+                                <p>
+                                    <a href='./imprint'>Imprint</a> &minus;
+                                    Copyright &copy; 2019 Samuel Oechsler
+                                </p>
                             </Grid.Column>
                             <Grid.Column>
                                 <FooterAzure />
