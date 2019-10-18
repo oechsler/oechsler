@@ -6,6 +6,7 @@ import { TopContainer } from '../containers/TopContainer';
 
 // Route components
 import { Home } from './home/Home';
+import { Imprint } from './imprint/Imprint';
 import { Error } from './error/Error';
 
 export const Router = () => {
@@ -14,6 +15,7 @@ export const Router = () => {
             <RouterStore>
                 <Switch>
                     <Route exact path='/' component={Home} />
+                    <Route exact path='/imprint' component={Imprint} />
                     <Route render={() => <Error code={404} />} />
                 </Switch>
 
