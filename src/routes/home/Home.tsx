@@ -82,7 +82,7 @@ export const Home = () => {
                 number={22}
                 zip={75173}
                 city='Pforzheim'
-                mail='you@oechsler.me'
+                mail='you@oechsler.it'
                 phone='07231 4709400'
             />
         );

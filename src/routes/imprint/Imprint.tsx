@@ -31,7 +31,7 @@ const Imprint = () => {
             <Header as='h2'>Contact</Header>
             <p>
                 <span>Telefon: 07231 4709400</span>
-                <span>E-Mail: you@oechsler.me</span>
+                <span>E-Mail: you@oechsler.it</span>
             </p>
         </Page>
     );
