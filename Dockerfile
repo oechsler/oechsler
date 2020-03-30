@@ -16,7 +16,7 @@ RUN yarn build
 FROM caddy/caddy:alpine as DEPLOY
 
 # Add built react app
-COPY --from=BUILD /project/build /var/www/html
+COPY --from=BUILD /project/dist /var/www/html
 
 # Add caddy server config
 COPY ./Caddyfile /etc/caddy/Caddyfile
