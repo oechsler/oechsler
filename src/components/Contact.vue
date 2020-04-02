@@ -1,0 +1,55 @@
+<template>
+  <div class="contact">
+    <h2>Contact</h2>
+    <p>
+      <strong>{{ name }}</strong>
+      <span>{{ street }} {{ number }}</span>
+      <span>{{ zip }} {{ city }}</span>
+    </p>
+    <p>
+      <span v-if="email !== undefined">
+        Mail: <a :href="`mailto:${email}`">{{ email }}</a>
+      </span>
+      <span v-if="phone !== undefined">
+        Phone: <a :href="`tel:${phone.replace(/\s/g, '')}`">‪{{ phone }}‬</a>
+      </span>
+    </p>
+  </div>
+</template>
+
+<script lang="ts">
+import { Vue, Component, Prop } from "vue-property-decorator";
+
+@Component
+export default class Contact extends Vue {
+  @Prop({ required: true }) readonly name!: string;
+  @Prop({ required: true }) readonly street!: string;
+  @Prop({ required: true }) readonly number!: number;
+  @Prop({ required: true }) readonly zip!: string;
+  @Prop({ required: true }) readonly city!: string;
+  @Prop() readonly email?: string;
+  @Prop() readonly phone?: string;
+}
+</script>
+
+<style lang="scss" scoped>
+.contact {
+  span,
+  strong {
+    @apply p-0;
+
+    @apply block;
+  }
+
+  a {
+    @apply text-accent;
+
+    @apply transition-colors;
+    @apply duration-200;
+
+    &:hover {
+      @apply text-accent-lighter;
+    }
+  }
+}
+</style>

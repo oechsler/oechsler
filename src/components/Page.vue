@@ -1,9 +1,10 @@
 <template>
-  <article :class="['page', { inverted }, size]" :style="rootStyles">
+  <section :id="anchor" :class="['page', { inverted }]" :style="rootStyles">
     <div :class="['page-container', { inverted }]">
       <slot />
     </div>
-  </article>
+    <slot name="footer" />
+  </section>
 </template>
 
 <script lang="ts">
@@ -11,22 +12,21 @@ import { Component, Vue, Prop } from "vue-property-decorator";
 
 @Component
 export default class Page extends Vue {
+  @Prop() readonly anchor?: string;
   @Prop({ default: false }) readonly inverted!: boolean;
   @Prop() readonly background?: string;
-  @Prop() readonly color?: string;
-  @Prop() readonly minSize?: number;
 
   // Computed styles for the root element
   get rootStyles() {
+    console.log(this.background);
     return {
-      backgroundImage: this.background ? `url(${this.background})` : null,
-      backgroundColor: this.color ?? null
+      backgroundImage: this.background ? `url(${this.background})` : null
     };
   }
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .page {
   @apply font-lato;
 
@@ -47,17 +47,12 @@ export default class Page extends Vue {
   }
 
   h2 {
-    @apply pt-4;
-
     @apply text-lg;
     @apply font-bold;
   }
 
   p {
-    @apply pt-4;
-
     @apply text-sm;
-    @apply text-justify;
   }
 
   &.inverted {
