@@ -1,13 +1,15 @@
 <template>
   <article class="project">
-    <img :src="thumbnail" :alt="`${title} thumbnail`" />
-    <div class="project-content">
-      <h3>{{ title }}</h3>
-      <p>{{ description }}</p>
-      <div class="project-tags">
-        <slot></slot>
+    <a :href="href ? href : null">
+      <img :src="thumbnail" :alt="`${title} thumbnail`" />
+      <div class="project-content">
+        <h3>{{ title }}</h3>
+        <p>{{ description }}</p>
+        <div class="project-tags">
+          <slot></slot>
+        </div>
       </div>
-    </div>
+    </a>
   </article>
 </template>
 
@@ -19,6 +21,7 @@ export default class Project extends Vue {
   @Prop({ required: true }) readonly thumbnail!: string;
   @Prop({ required: true }) readonly title!: string;
   @Prop({ required: true }) readonly description!: string;
+  @Prop() readonly href?: string;
 }
 </script>
 

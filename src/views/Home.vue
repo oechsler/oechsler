@@ -68,6 +68,7 @@
         </Project>
       </Projects>
     </Page>
+    <Footer />
   </div>
 </template>
 
@@ -83,6 +84,7 @@ import Projects from "@/components/Projects.vue";
 import Project from "@/components/Project.vue";
 import ProjectTag from "@/components/ProjectTag.vue";
 import TwoColumn from "@/components/TwoColumn.vue";
+import Footer from "@/components/Footer.vue";
 
 import thumbOverview from "@/assets/thumb-overview.jpg";
 import thumbPlank from "@/assets/thumb-plank.jpg";
@@ -102,7 +104,8 @@ import projectBaresharp from "@/assets/project-baresharp.jpg";
     TwoColumn,
     Projects,
     Project,
-    ProjectTag
+    ProjectTag,
+    Footer
   }
 })
 export default class Home extends Vue {
