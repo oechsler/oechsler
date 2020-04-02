@@ -5,6 +5,9 @@ module.exports = {
       pacifico: ["Pacifico"]
     },
     extend: {
+      fontSize: {
+        "2xs": "0.6rem"
+      },
       colors: {
         accent: "#fda900",
         "accent-dark": "#e6850b",
@@ -20,6 +23,12 @@ module.exports = {
       },
       opacity: {
         "90": "0.9"
+      },
+      borderRadius: {
+        xl: "1.25rem"
+      },
+      boxShadow: {
+        card: "0 6px 18px rgba(0,0,0,.05)"
       }
     }
   },

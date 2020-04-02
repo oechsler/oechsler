@@ -40,22 +40,56 @@
       </TwoColumn>
     </Page>
     <Page :background="thumbPlank" />
+    <Page>
+      <Projects>
+        <Project
+          :thumbnail="projectAzureblob"
+          title="Azure Blob"
+          description="Library used for abstraction of Azure Blob Storage in my golang projects."
+        >
+          <ProjectTag language="Go" icon="go-plain" />
+          <ProjectTag language="GitHub" icon="github-plain" />
+        </Project>
+        <Project
+          :thumbnail="projectDotfiles"
+          title="Dotfiles"
+          description="Automatic install and maintainance of user configs and packages."
+        >
+          <ProjectTag language="Shell" icon="linux-plain" />
+          <ProjectTag language="GitHub" icon="github-plain" />
+        </Project>
+        <Project
+          :thumbnail="projectBaresharp"
+          title="Bare Sharp"
+          description="Cross-Platform 2d sprite framework living on top of MonoGame."
+        >
+          <ProjectTag language="C#" icon="csharp-plain" />
+          <ProjectTag language="GitHub" icon="github-plain" />
+        </Project>
+      </Projects>
+    </Page>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import About from "../components/About.vue";
-import Contact from "../components/Contact.vue";
-import Devicon from "../components/Devicon.vue";
-import Elevator from "../components/Elevator.vue";
-import Hero from "../components/Hero.vue";
-import Page from "../components/Page.vue";
-import Projects from "../components/Projects.vue";
-import TwoColumn from "../components/TwoColumn.vue";
+import About from "@/components/About.vue";
+import Contact from "@/components/Contact.vue";
+import Devicon from "@/components/Devicon.vue";
+import Elevator from "@/components/Elevator.vue";
+import Hero from "@/components/Hero.vue";
+import Page from "@/components/Page.vue";
+import Projects from "@/components/Projects.vue";
+import Project from "@/components/Project.vue";
+import ProjectTag from "@/components/ProjectTag.vue";
+import TwoColumn from "@/components/TwoColumn.vue";
 
 import thumbOverview from "@/assets/thumb-overview.jpg";
 import thumbPlank from "@/assets/thumb-plank.jpg";
+
+import projectAzureblob from "@/assets/project-azureblob.jpg";
+import projectDotfiles from "@/assets/project-dotfiles.jpg";
+import projectBaresharp from "@/assets/project-baresharp.jpg";
 
 @Component({
   components: {
@@ -66,11 +100,17 @@ import thumbPlank from "@/assets/thumb-plank.jpg";
     Devicon,
     Page,
     TwoColumn,
-    Projects
+    Projects,
+    Project,
+    ProjectTag
   }
 })
 export default class Home extends Vue {
   readonly thumbOverview: string = thumbOverview;
   readonly thumbPlank: string = thumbPlank;
+
+  readonly projectAzureblob: string = projectAzureblob;
+  readonly projectDotfiles: string = projectDotfiles;
+  readonly projectBaresharp: string = projectBaresharp;
 }
 </script>
