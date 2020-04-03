@@ -49,6 +49,14 @@ export default class Footer extends Vue {
     @apply justify-between;
   }
 
+  @screen md {
+    @apply px-48;
+  }
+
+  @screen lg {
+    @apply py-16;
+  }
+
   .footer-imprint {
     > .brand {
       @apply text-2xl;

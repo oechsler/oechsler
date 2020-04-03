@@ -38,11 +38,19 @@ export default class ProjectTag extends Vue {
     @apply text-3xs;
   }
 
+  @screen lg {
+    @apply text-2xs;
+  }
+
   .devicon {
     @apply text-xs;
 
     @screen md {
       @apply text-2xs;
+    }
+
+    @screen lg {
+      @apply text-xs;
     }
   }
 

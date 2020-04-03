@@ -40,6 +40,10 @@ export default class Elevator extends Vue {
     @apply w-56;
 
     @apply rounded-full;
+
+    @screen lg {
+      @apply w-64;
+    }
   }
 
   .elevator-description {
@@ -69,6 +73,10 @@ export default class Elevator extends Vue {
 
     @apply transform;
     @apply -rotate-2;
+
+    @screen lg {
+      @apply text-5xl;
+    }
   }
 
   h2 {
@@ -76,6 +84,11 @@ export default class Elevator extends Vue {
 
     @apply text-sm;
     @apply text-center;
+
+    @screen lg {
+      @apply pt-2;
+      @apply text-base;
+    }
   }
 
   a {

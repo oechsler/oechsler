@@ -63,6 +63,10 @@ export default class Project extends Vue {
     @screen md {
       @apply text-base;
     }
+
+    @screen lg {
+      @apply text-lg;
+    }
   }
 
   p {
@@ -72,6 +76,10 @@ export default class Project extends Vue {
 
     @screen md {
       @apply text-2xs;
+    }
+
+    @screen lg {
+      @apply text-sm;
     }
   }
 
