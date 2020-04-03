@@ -36,6 +36,10 @@ export default class Page extends Vue {
 
     @apply px-10;
     @apply py-16;
+
+    @screen sm {
+      @apply px-16;
+    }
   }
 
   h1 {

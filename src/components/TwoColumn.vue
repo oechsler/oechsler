@@ -18,15 +18,36 @@ export default class TwoColumn extends Vue {}
 
 <style lang="scss" scope>
 .two-column {
+  @screen sm {
+    @apply flex;
+    @apply flex-row;
+    @apply flex-grow;
+  }
+
   & > * *:not(:first-child) {
     @apply pt-4;
   }
 
   .two-column-left {
+    @screen sm {
+      @apply pr-6;
+      @apply w-9/12;
+    }
   }
 
   .two-column-right {
     @apply pt-4;
+
+    @screen sm {
+      @apply pt-0;
+      @apply w-3/12;
+    }
+
+    p:nth-child(2) {
+      @screen sm {
+        @apply pt-0;
+      }
+    }
   }
 }
 </style>

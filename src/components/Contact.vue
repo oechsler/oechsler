@@ -34,11 +34,23 @@ export default class Contact extends Vue {
 
 <style lang="scss" scoped>
 .contact {
+  @screen sm {
+    padding-top: 3.8rem;
+
+    @apply float-right;
+  }
+
   span,
   strong {
     @apply p-0;
 
     @apply block;
+  }
+
+  h2 {
+    @screen md {
+      @apply hidden;
+    }
   }
 
   a {

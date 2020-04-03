@@ -41,6 +41,14 @@ export default class Footer extends Vue {
 
   @apply text-white;
 
+  @screen sm {
+    @apply px-24;
+
+    @apply flex;
+    @apply flex-row;
+    @apply justify-between;
+  }
+
   .footer-imprint {
     > .brand {
       @apply text-2xl;

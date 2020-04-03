@@ -28,8 +28,23 @@ export default class Projects extends Vue {}
     @apply flex-wrap;
     @apply justify-center;
 
-    .project:not(:first-child) {
-      @apply mt-12;
+    @screen sm {
+      @apply pb-10;
+    }
+
+    .project {
+      @screen sm {
+        transform: perspective(50rem) rotateY(10deg);
+      }
+
+      &:not(:first-child) {
+        @apply mt-12;
+
+        @screen sm {
+          @apply mt-0;
+          @apply -ml-4;
+        }
+      }
     }
   }
 

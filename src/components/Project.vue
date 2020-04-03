@@ -30,7 +30,12 @@ export default class Project extends Vue {
   @apply w-11/12;
 
   @apply rounded-xl;
+  @apply bg-white;
   @apply shadow-card;
+
+  @screen sm {
+    @apply w-4/12;
+  }
 
   .project-content {
     @apply p-5;
@@ -50,12 +55,20 @@ export default class Project extends Vue {
   h3 {
     @apply font-semibold;
     @apply text-lg;
+
+    @screen sm {
+      @apply text-base;
+    }
   }
 
   p {
     @apply pt-1;
 
     @apply text-gray-700;
+
+    @screen sm {
+      @apply text-2xs;
+    }
   }
 
   img {
