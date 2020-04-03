@@ -38,6 +38,10 @@ export default class Projects extends Vue {}
 
     .project {
       @screen md {
+        @apply duration-500;
+        @apply ease-in-out;
+        @apply transition-all;
+
         transform: perspective(50rem) rotateY(10deg);
       }
 
@@ -47,6 +51,27 @@ export default class Projects extends Vue {}
         @screen md {
           @apply mt-0;
           @apply -ml-4;
+        }
+      }
+
+      &:hover {
+        @screen xl {
+          @apply mx-8;
+
+          transform: rotateZ(-2deg);
+        }
+      }
+
+      &:nth-child(1):hover,
+      &:nth-child(even):hover {
+        @screen xl {
+          @apply mr-12;
+        }
+      }
+
+      &:nth-child(even):hover {
+        @screen xl {
+          transform: rotateZ(2deg);
         }
       }
     }

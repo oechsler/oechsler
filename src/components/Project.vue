@@ -41,6 +41,12 @@ export default class Project extends Vue {
     @apply w-4/12;
   }
 
+  @screen xl {
+    @apply w-auto;
+
+    max-width: 15.5rem;
+  }
+
   .project-content {
     @apply p-5;
   }
@@ -80,6 +86,10 @@ export default class Project extends Vue {
 
     @screen lg {
       @apply text-sm;
+    }
+
+    @screen xl {
+      @apply text-xs;
     }
   }
 

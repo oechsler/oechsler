@@ -48,6 +48,11 @@ export default class Page extends Vue {
     @screen lg {
       @apply py-24;
     }
+
+    @screen xl {
+      @apply mx-auto;
+      @apply max-w-6xl;
+    }
   }
 
   h1 {

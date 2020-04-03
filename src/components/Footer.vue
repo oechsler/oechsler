@@ -1,22 +1,24 @@
 <template>
   <footer class="footer">
-    <section class="footer-imprint">
-      <h1>
-        <Brand />
-      </h1>
-      <p>
-        Created with Vue.js and &hearts; in Pforzheim
-      </p>
-      <p>
-        <a href="./imprint">Imprint</a>
-        &nbsp;
-        <span>− Copyright © 2020 Samuel Oechsler</span>
-      </p>
-    </section>
-    <section class="footer-provider">
-      <h1>Delivered from the cloud by</h1>
-      <img :src="digitalocean" alt="Digitalocean Logo" />
-    </section>
+    <div class="footer-container">
+      <section class="footer-imprint">
+        <h1>
+          <Brand />
+        </h1>
+        <p>
+          Created with Vue.js and &hearts; in Pforzheim
+        </p>
+        <p>
+          <a href="./imprint">Imprint</a>
+          &nbsp;
+          <span>− Copyright © 2020 Samuel Oechsler</span>
+        </p>
+      </section>
+      <section class="footer-provider">
+        <h1>Delivered from the cloud by</h1>
+        <img :src="digitalocean" alt="Digitalocean Logo" />
+      </section>
+    </div>
   </footer>
 </template>
 
@@ -34,71 +36,78 @@ export default class Footer extends Vue {
 
 <style lang="scss" scoped>
 .footer {
-  @apply px-10;
-  @apply py-12;
-
   @apply bg-accent;
 
   @apply text-white;
 
-  @screen sm {
-    @apply px-24;
+  .footer-container {
+    @apply px-10;
+    @apply py-12;
 
-    @apply flex;
-    @apply flex-row;
-    @apply justify-between;
-  }
+    @screen sm {
+      @apply px-24;
 
-  @screen md {
-    @apply px-48;
-  }
-
-  @screen lg {
-    @apply py-16;
-  }
-
-  .footer-imprint {
-    > .brand {
-      @apply text-2xl;
+      @apply flex;
+      @apply flex-row;
+      @apply justify-between;
     }
 
-    p {
-      @apply font-light;
-      @apply text-xs;
+    @screen md {
+      @apply px-48;
+    }
 
-      &:last-child {
-        @apply pt-4;
+    @screen lg {
+      @apply py-16;
+    }
+
+    @screen xl {
+      @apply mx-auto;
+      @apply max-w-screen-xl;
+    }
+
+    .footer-imprint {
+      > .brand {
+        @apply text-2xl;
       }
 
-      span,
-      a {
-        @apply opacity-50;
-      }
+      p {
+        @apply font-light;
+        @apply text-xs;
 
-      a {
-        @apply transition-opacity;
-        @apply duration-200;
+        &:last-child {
+          @apply pt-4;
+        }
 
-        &:hover {
-          @apply opacity-100;
+        span,
+        a {
+          @apply opacity-50;
+        }
+
+        a {
+          @apply transition-opacity;
+          @apply duration-200;
+
+          &:hover {
+            @apply opacity-100;
+          }
         }
       }
     }
-  }
 
-  .footer-provider {
-    @apply pt-6;
+    .footer-provider {
+      @apply pt-6;
 
-    @apply opacity-50;
+      @apply opacity-50;
 
-    img {
-      @apply pt-1;
-      @apply w-32;
+      img {
+        @apply pt-1;
+        @apply w-32;
+      }
     }
-  }
 
-  h1 {
-    @apply text-sm;
+    h1 {
+      @apply text-sm;
+    }
   }
 }
 </style>
