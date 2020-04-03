@@ -48,7 +48,6 @@ export default class Project extends Vue {
   }
 
   h3 {
-    @apply font-lato;
     @apply font-semibold;
     @apply text-lg;
   }
@@ -56,7 +55,6 @@ export default class Project extends Vue {
   p {
     @apply pt-1;
 
-    @apply font-lato;
     @apply text-gray-700;
   }
 

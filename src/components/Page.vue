@@ -3,7 +3,6 @@
     <div :class="['page-container', { inverted }]">
       <slot />
     </div>
-    <slot name="footer" />
   </section>
 </template>
 
@@ -28,8 +27,6 @@ export default class Page extends Vue {
 
 <style lang="scss">
 .page {
-  @apply font-lato;
-
   @apply bg-white;
   @apply bg-cover;
   @apply bg-center;

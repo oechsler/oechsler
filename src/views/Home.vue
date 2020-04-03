@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <Overscroll message="Ich liebe dich Melli &hearts;" />
     <Hero :background="thumbOverview">
       <Elevator />
     </Hero>
@@ -74,6 +75,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import Overscroll from "@/components/Overscroll.vue";
 import About from "@/components/About.vue";
 import Contact from "@/components/Contact.vue";
 import Devicon from "@/components/Devicon.vue";
@@ -105,7 +107,8 @@ import projectBaresharp from "@/assets/project-baresharp.jpg";
     Projects,
     Project,
     ProjectTag,
-    Footer
+    Footer,
+    Overscroll
   }
 })
 export default class Home extends Vue {

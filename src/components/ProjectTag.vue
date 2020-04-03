@@ -31,7 +31,6 @@ export default class ProjectTag extends Vue {
   @apply flex-row;
   @apply items-center;
 
-  @apply font-lato;
   @apply text-2xs;
   @apply text-white;
 

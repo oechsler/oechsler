@@ -11,7 +11,6 @@ export default class Brand extends Vue {}
 
 <style lang="scss" scoped>
 .brand {
-  @apply font-lato;
   @apply text-xl;
 }
 </style>

@@ -1,7 +1,22 @@
 module.exports = {
   theme: {
     fontFamily: {
-      lato: ["Lato", "Helvetica Neue", "Arial", "Helvetica", "sans-serif"],
+      sans: [
+        "Lato",
+        "system-ui",
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "Roboto",
+        "Helvetica Neue",
+        "Arial",
+        "Noto Sans",
+        "sans-serif",
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol",
+        "Noto Color Emoji"
+      ],
       pacifico: ["Pacifico"]
     },
     extend: {
@@ -19,7 +34,14 @@ module.exports = {
       },
       width: {
         "72": "18rem",
-        "80": "20rem"
+        "80": "20rem",
+        "300": "300px"
+      },
+      margin: {
+        "-150": "-150px"
+      },
+      inset: {
+        "1/2": "50%"
       },
       opacity: {
         "90": "0.9"
@@ -29,6 +51,12 @@ module.exports = {
       },
       boxShadow: {
         card: "0 6px 18px rgba(0,0,0,.05)"
+      },
+      zIndex: {
+        "-10": "-10"
+      },
+      rotate: {
+        "-2": "-2.5deg"
       }
     }
   },

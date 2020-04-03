@@ -66,10 +66,14 @@ export default class Elevator extends Vue {
     @apply font-pacifico;
     @apply text-4xl;
     @apply text-center;
+
+    @apply transform;
+    @apply -rotate-2;
   }
 
   h2 {
-    @apply font-lato;
+    @apply pt-1;
+
     @apply text-sm;
     @apply text-center;
   }

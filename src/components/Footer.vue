@@ -1,16 +1,22 @@
 <template>
   <footer class="footer">
-    <h1>
-      <Brand />
-    </h1>
-    <p>
-      Created with Vue.js and &hearts; in Pforzheim
-    </p>
-    <p>
-      <a href="./imprint">Imprint</a>
-      &nbsp;
-      <span>− Copyright © 2020 Samuel Oechsler</span>
-    </p>
+    <section class="footer-imprint">
+      <h1>
+        <Brand />
+      </h1>
+      <p>
+        Created with Vue.js and &hearts; in Pforzheim
+      </p>
+      <p>
+        <a href="./imprint">Imprint</a>
+        &nbsp;
+        <span>− Copyright © 2020 Samuel Oechsler</span>
+      </p>
+    </section>
+    <section class="footer-provider">
+      <h1>Delivered from the cloud by</h1>
+      <img :src="digitalocean" alt="Digitalocean Logo" />
+    </section>
   </footer>
 </template>
 
@@ -18,8 +24,12 @@
 import { Vue, Component } from "vue-property-decorator";
 import Brand from "@/components/Brand.vue";
 
+import digitalocean from "@/assets/digital-ocean.png";
+
 @Component({ components: { Brand } })
-export default class Footer extends Vue {}
+export default class Footer extends Vue {
+  readonly digitalocean = digitalocean;
+}
 </script>
 
 <style lang="scss" scoped>
@@ -31,31 +41,48 @@ export default class Footer extends Vue {}
 
   @apply text-white;
 
-  h1 > .brand {
-    @apply text-2xl;
-  }
-
-  p {
-    @apply font-light;
-    @apply text-xs;
-
-    &:last-child {
-      @apply pt-4;
+  .footer-imprint {
+    > .brand {
+      @apply text-2xl;
     }
 
-    span,
-    a {
-      @apply opacity-50;
-    }
+    p {
+      @apply font-light;
+      @apply text-xs;
 
-    a {
-      @apply transition-opacity;
-      @apply duration-200;
+      &:last-child {
+        @apply pt-4;
+      }
 
-      &:hover {
-        @apply opacity-100;
+      span,
+      a {
+        @apply opacity-50;
+      }
+
+      a {
+        @apply transition-opacity;
+        @apply duration-200;
+
+        &:hover {
+          @apply opacity-100;
+        }
       }
     }
+  }
+
+  .footer-provider {
+    @apply pt-6;
+
+    @apply opacity-50;
+
+    img {
+      @apply pt-1;
+      @apply w-32;
+    }
+  }
+
+  h1 {
+    @apply text-sm;
   }
 }
 </style>
