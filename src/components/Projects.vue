@@ -29,18 +29,22 @@ export default class Projects extends Vue {}
     @apply justify-center;
 
     @screen sm {
+      @apply pb-6;
+    }
+
+    @screen md {
       @apply pb-10;
     }
 
     .project {
-      @screen sm {
+      @screen md {
         transform: perspective(50rem) rotateY(10deg);
       }
 
       &:not(:first-child) {
         @apply mt-12;
 
-        @screen sm {
+        @screen md {
           @apply mt-0;
           @apply -ml-4;
         }

@@ -34,7 +34,7 @@ export default class Contact extends Vue {
 
 <style lang="scss" scoped>
 .contact {
-  @screen sm {
+  @screen md {
     padding-top: 3.8rem;
 
     @apply float-right;

@@ -34,6 +34,10 @@ export default class Project extends Vue {
   @apply shadow-card;
 
   @screen sm {
+    @apply w-7/12;
+  }
+
+  @screen md {
     @apply w-4/12;
   }
 
@@ -56,7 +60,7 @@ export default class Project extends Vue {
     @apply font-semibold;
     @apply text-lg;
 
-    @screen sm {
+    @screen md {
       @apply text-base;
     }
   }
@@ -66,7 +70,7 @@ export default class Project extends Vue {
 
     @apply text-gray-700;
 
-    @screen sm {
+    @screen md {
       @apply text-2xs;
     }
   }

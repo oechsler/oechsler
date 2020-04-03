@@ -18,7 +18,7 @@ export default class TwoColumn extends Vue {}
 
 <style lang="scss" scope>
 .two-column {
-  @screen sm {
+  @screen md {
     @apply flex;
     @apply flex-row;
     @apply flex-grow;
@@ -29,7 +29,7 @@ export default class TwoColumn extends Vue {}
   }
 
   .two-column-left {
-    @screen sm {
+    @screen md {
       @apply pr-6;
       @apply w-9/12;
     }
@@ -38,13 +38,13 @@ export default class TwoColumn extends Vue {}
   .two-column-right {
     @apply pt-4;
 
-    @screen sm {
+    @screen md {
       @apply pt-0;
       @apply w-3/12;
     }
 
     p:nth-child(2) {
-      @screen sm {
+      @screen md {
         @apply pt-0;
       }
     }
