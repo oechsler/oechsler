@@ -7,11 +7,31 @@
     />
     <div class="elevator-description">
       <h1>Samuel Oechsler</h1>
-      <h2>21. Sudent, developer <a href="#">@medialesson</a>.</h2>
+      <h2>
+        21. Sudent, developer
+        <a
+          href="https://www.media-lesson.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >@medialesson</a
+        >.
+      </h2>
     </div>
     <div class="elevator-links">
-      <a href="#"><font-awesome-icon :icon="githubIcon"/></a>
-      <a href="#"><font-awesome-icon :icon="xboxIcon"/></a>
+      <a
+        href="https://github.com/Boxwrapper"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <font-awesome-icon :icon="githubIcon" />
+      </a>
+      <a
+        href="http://live.xbox.com/de-DE/Profile?gamertag=MuratYilderim"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <font-awesome-icon :icon="xboxIcon" />
+      </a>
     </div>
   </div>
 </template>

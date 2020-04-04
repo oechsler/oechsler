@@ -52,16 +52,5 @@ export default class Contact extends Vue {
       @apply hidden;
     }
   }
-
-  a {
-    @apply text-accent;
-
-    @apply transition-colors;
-    @apply duration-200;
-
-    &:hover {
-      @apply text-accent-lighter;
-    }
-  }
 }
 </style>

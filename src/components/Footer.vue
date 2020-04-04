@@ -9,7 +9,7 @@
           Created with Vue.js and &hearts; in Pforzheim
         </p>
         <p>
-          <a href="./imprint">Imprint</a>
+          <router-link to="/imprint">Imprint</router-link>
           &nbsp;
           <span>− Copyright © 2020 Samuel Oechsler</span>
         </p>

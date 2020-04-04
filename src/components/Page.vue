@@ -14,13 +14,31 @@ export default class Page extends Vue {
   @Prop() readonly anchor?: string;
   @Prop({ default: false }) readonly inverted!: boolean;
   @Prop() readonly background?: string;
+  @Prop({ default: false }) readonly screen!: boolean;
+
+  windowHeight = 0;
+  footerHeight = 0;
 
   // Computed styles for the root element
   get rootStyles() {
-    console.log(this.background);
     return {
-      backgroundImage: this.background ? `url(${this.background})` : null
+      backgroundImage: this.background ? `url(${this.background})` : null,
+      minHeight: this.screen
+        ? `calc(${this.windowHeight}px - ${this.footerHeight}px)`
+        : null,
     };
+  }
+
+  mounted() {
+    if (screen) {
+      window.addEventListener("resize", this.onResize);
+      this.onResize();
+    }
+  }
+
+  onResize() {
+    this.windowHeight = window.innerHeight;
+    this.footerHeight = document.getElementsByTagName("footer")[0].offsetHeight;
   }
 }
 </script>
@@ -67,6 +85,21 @@ export default class Page extends Vue {
 
   p {
     @apply text-sm;
+  }
+
+  a {
+    @apply text-accent;
+
+    @apply transition-colors;
+    @apply duration-200;
+
+    &:hover {
+      @apply text-accent-lighter;
+    }
+  }
+
+  &.screen {
+    @apply h-screen;
   }
 
   &.inverted {

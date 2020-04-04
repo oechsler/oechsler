@@ -1,6 +1,6 @@
 <template>
   <article class="project">
-    <a :href="href ? href : null">
+    <a :href="href ? href : null" target="_blank" rel="noopener noreferrer">
       <img :src="thumbnail" :alt="`${title} thumbnail`" />
       <div class="project-content">
         <h3>{{ title }}</h3>
@@ -65,6 +65,7 @@ export default class Project extends Vue {
   h3 {
     @apply font-semibold;
     @apply text-lg;
+    @apply text-black;
 
     @screen md {
       @apply text-base;
