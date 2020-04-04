@@ -98,4 +98,18 @@ export default class Projects extends Vue {}
     }
   }
 }
+
+.inverted .projects h2 {
+  span:nth-child(1) {
+    @apply text-gray-400;
+  }
+
+  span:nth-child(2) {
+    @apply text-gray-500;
+  }
+
+  span:nth-child(3) {
+    @apply text-gray-600;
+  }
+}
 </style>

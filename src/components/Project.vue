@@ -100,4 +100,21 @@ export default class Project extends Vue {
     @apply rounded-t-xl;
   }
 }
+
+.inverted .project {
+  @apply bg-gray-900;
+
+  h3 {
+    @apply text-white;
+  }
+
+  p {
+    @apply text-gray-500;
+  }
+
+  img {
+    opacity: 0.4;
+    filter: saturate(200%) invert(100%) brightness(130%);
+  }
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer :class="['footer', { inverted }]">
     <div class="footer-container">
       <section class="footer-imprint">
         <h1>
@@ -23,13 +23,15 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "vue-property-decorator";
+import { Vue, Component, Prop } from "vue-property-decorator";
 import Brand from "@/components/Brand.vue";
 
 import digitalocean from "@/assets/digital-ocean.png";
 
 @Component({ components: { Brand } })
 export default class Footer extends Vue {
+  @Prop({ default: false }) readonly inverted!: boolean;
+
   readonly digitalocean = digitalocean;
 }
 </script>
@@ -108,6 +110,10 @@ export default class Footer extends Vue {
     h1 {
       @apply text-sm;
     }
+  }
+
+  &.inverted {
+    @apply bg-gray-900;
   }
 }
 </style>

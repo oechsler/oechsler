@@ -17,8 +17,8 @@ import DeviconList from "@/components/DeviconList.vue";
 
 @Component({
   components: {
-    DeviconList
-  }
+    DeviconList,
+  },
 })
 export default class About extends Vue {}
 </script>
@@ -26,7 +26,9 @@ export default class About extends Vue {}
 <style lang="scss" scoped>
 .about {
   .about-content {
-    @apply text-justify;
+    @screen sm {
+      @apply text-justify;
+    }
   }
 }
 </style>

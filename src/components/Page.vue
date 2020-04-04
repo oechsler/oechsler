@@ -23,6 +23,8 @@ export default class Page extends Vue {
   get rootStyles() {
     return {
       backgroundImage: this.background ? `url(${this.background})` : null,
+      filter: this.background && this.inverted ? `contrast(140%)` : null,
+      opacity: this.background && this.inverted ? `0.4` : null,
       minHeight: this.screen
         ? `calc(${this.windowHeight}px - ${this.footerHeight}px)`
         : null,
@@ -105,6 +107,14 @@ export default class Page extends Vue {
   &.inverted {
     @apply bg-gray-800;
     @apply text-white;
+
+    a {
+      @apply text-gray-500;
+
+      &:hover {
+        @apply text-gray-600;
+      }
+    }
   }
 }
 </style>

@@ -15,52 +15,52 @@ module.exports = {
         "Apple Color Emoji",
         "Segoe UI Emoji",
         "Segoe UI Symbol",
-        "Noto Color Emoji"
+        "Noto Color Emoji",
       ],
-      pacifico: ["Pacifico"]
+      pacifico: ["Pacifico"],
     },
     extend: {
       fontSize: {
         "2xs": "0.6rem",
-        "3xs": "0.5rem"
+        "3xs": "0.5rem",
       },
       colors: {
         accent: "#fda900",
         "accent-dark": "#e6850b",
         "accent-light": "#ffb218",
-        "accent-lighter": "#ffbb31"
+        "accent-lighter": "#ffbb31",
       },
       minHeight: {
-        "180": "180px"
+        "180": "180px",
       },
       width: {
         "72": "18rem",
         "80": "20rem",
-        "300": "300px"
+        "300": "300px",
       },
       margin: {
-        "-150": "-150px"
+        "-150": "-150px",
       },
       inset: {
-        "1/2": "50%"
+        "1/2": "50%",
       },
       opacity: {
-        "90": "0.9"
+        "90": "0.9",
       },
       borderRadius: {
-        xl: "1.25rem"
+        xl: "1.25rem",
       },
       boxShadow: {
-        card: "0 6px 18px rgba(0,0,0,.05)"
+        card: "0 6px 18px rgba(0,0,0,.05)",
       },
       zIndex: {
-        "-10": "-10"
+        "-10": "-10",
       },
       rotate: {
-        "-2": "-2.5deg"
-      }
-    }
+        "-2": "-2.5deg",
+      },
+    },
   },
   variants: {},
-  plugins: []
+  plugins: [],
 };

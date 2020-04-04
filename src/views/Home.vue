@@ -1,10 +1,10 @@
 <template>
   <div class="home">
     <Overscroll message="Ich liebe dich Melli &hearts;" />
-    <Hero :background="thumbOverview">
+    <Hero :background="thumbOverview" :scroll="scrollOffset" :inverted="true">
       <Elevator />
     </Hero>
-    <Page anchor="about" :inverted="false">
+    <Page anchor="about" :inverted="true">
       <TwoColumn>
         <template #left>
           <About>
@@ -40,8 +40,8 @@
         </template>
       </TwoColumn>
     </Page>
-    <Page :background="thumbPlank" />
-    <Page>
+    <Page :background="thumbPlank" :inverted="true" />
+    <Page :inverted="true">
       <Projects>
         <Project
           :thumbnail="projectAzureblob"
@@ -72,7 +72,7 @@
         </Project>
       </Projects>
     </Page>
-    <Footer />
+    <Footer :inverted="true" />
   </div>
 </template>
 
@@ -111,8 +111,8 @@ import projectBaresharp from "@/assets/project-baresharp.jpg";
     Project,
     ProjectTag,
     Footer,
-    Overscroll
-  }
+    Overscroll,
+  },
 })
 export default class Home extends Vue {
   readonly thumbOverview: string = thumbOverview;
@@ -121,5 +121,25 @@ export default class Home extends Vue {
   readonly projectAzureblob: string = projectAzureblob;
   readonly projectDotfiles: string = projectDotfiles;
   readonly projectBaresharp: string = projectBaresharp;
+
+  scrollTop = 0;
+
+  get scrollOffset() {
+    return this.scrollTop * 0.2;
+  }
+
+  mounted() {
+    window.addEventListener("scroll", this.onScroll, { passive: true });
+  }
+
+  beforeDestroy() {
+    //window.removeEventListener("scroll", this.onScroll);
+  }
+
+  onScroll() {
+    const element = document.documentElement;
+    this.scrollTop =
+      (window.pageYOffset || element.scrollTop) - (element.clientTop || 0);
+  }
 }
 </script>

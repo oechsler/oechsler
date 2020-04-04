@@ -14,13 +14,13 @@ import { Component, Vue, Prop } from "vue-property-decorator";
 
 @Component
 export default class Hero extends Vue {
-  @Prop({ required: true, default: false }) readonly inverted!: boolean;
+  @Prop({ default: false }) readonly inverted!: boolean;
   @Prop() readonly background?: string;
   @Prop({ default: 0 }) readonly scroll?: number;
   @Prop() readonly scale?: number;
-  @Prop({ required: true, default: 8 }) readonly blur!: number;
-  @Prop({ required: true, default: 100 }) readonly grayscale!: number;
-  @Prop({ required: true, default: 0.1 }) readonly opacity!: number;
+  @Prop({ default: 8 }) readonly blur!: number;
+  @Prop({ default: 100 }) readonly grayscale!: number;
+  @Prop({ default: 0.1 }) readonly opacity!: number;
 
   // Computed styles for the background element
   get backgroundStyles() {
@@ -29,7 +29,7 @@ export default class Hero extends Vue {
       backgroundPositionY: `-${this.scroll}px`,
       backgroundSize: this.scale ? `calc(100% * ${this.scale})` : null,
       filter: `blur(${this.blur}px) grayscale(${this.grayscale}%)`,
-      opacity: this.opacity
+      opacity: this.opacity,
     };
   }
 }
@@ -72,7 +72,7 @@ export default class Hero extends Vue {
   }
 
   &.inverted {
-    @apply bg-accent-dark;
+    @apply bg-gray-900;
   }
 }
 </style>
