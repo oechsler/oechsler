@@ -44,6 +44,10 @@ export default class Elevator extends Vue {
     @screen lg {
       @apply w-64;
     }
+
+    @screen xl {
+      @apply w-72;
+    }
   }
 
   .elevator-description {

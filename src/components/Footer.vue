@@ -53,7 +53,7 @@ export default class Footer extends Vue {
     }
 
     @screen md {
-      @apply px-48;
+      @apply px-40;
     }
 
     @screen lg {

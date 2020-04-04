@@ -42,7 +42,7 @@ export default class Page extends Vue {
     }
 
     @screen md {
-      @apply px-40;
+      @apply px-32;
     }
 
     @screen lg {
