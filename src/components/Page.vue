@@ -7,6 +7,7 @@
 </template>
 
 <script lang="ts">
+import "reflect-metadata";
 import { Component, Vue, Prop } from "vue-property-decorator";
 
 @Component
@@ -27,7 +28,7 @@ export default class Page extends Vue {
       opacity: this.background && this.inverted ? `0.4` : null,
       minHeight: this.screen
         ? `calc(${this.windowHeight}px - ${this.footerHeight}px)`
-        : null,
+        : null
     };
   }
 

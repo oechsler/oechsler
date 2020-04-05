@@ -59,7 +59,7 @@
           :thumbnail="projectAzureblob"
           title="Azure Blob"
           description="Library used for abstraction of Azure Blob Storage in my golang projects."
-          href="https://github.com/Boxwrapper/azureblob"
+          href="https://github.com/oechsler/azureblob"
         >
           <ProjectTag language="Go" icon="go-plain" />
           <ProjectTag language="GitHub" icon="github-plain" />
@@ -68,7 +68,7 @@
           :thumbnail="projectDotfiles"
           title="Dotfiles"
           description="Automatic install and maintainance of user configs and packages."
-          href="https://github.com/Boxwrapper/dotfiles"
+          href="https://github.com/oechsler/dotfiles"
         >
           <ProjectTag language="Shell" icon="linux-plain" />
           <ProjectTag language="GitHub" icon="github-plain" />
@@ -77,7 +77,7 @@
           :thumbnail="projectBaresharp"
           title="Bare Sharp"
           description="Cross-Platform 2d sprite framework living on top of MonoGame."
-          href="https://github.com/Boxwrapper/BareSharp"
+          href="https://github.com/oechsler/BareSharp"
         >
           <ProjectTag language="C#" icon="csharp-plain" />
           <ProjectTag language="GitHub" icon="github-plain" />
@@ -89,6 +89,7 @@
 </template>
 
 <script lang="ts">
+import "reflect-metadata";
 import { Component, Vue } from "vue-property-decorator";
 import Overscroll from "@/components/Overscroll.vue";
 import About from "@/components/About.vue";

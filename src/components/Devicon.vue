@@ -3,8 +3,8 @@
 </template>
 
 <script lang="ts">
+import "reflect-metadata";
 import { Component, Vue, Prop } from "vue-property-decorator";
-import "devicon/devicon.css";
 
 @Component
 export default class Devicon extends Vue {
@@ -13,6 +13,8 @@ export default class Devicon extends Vue {
 </script>
 
 <style lang="scss" scoped>
+@import url("https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css");
+
 .devicon {
   @apply text-base;
 }
