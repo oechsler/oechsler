@@ -23,6 +23,16 @@ export default class App extends Vue {
 </script>
 
 <style lang="scss" scoped>
+@import url("https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
+
+html,
+body {
+  @apply m-0;
+
+  @apply font-sans;
+}
+
 .inverted {
   @apply bg-gray-900;
 }
