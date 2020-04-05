@@ -6,7 +6,15 @@
       :scroll="scrollOffset"
       :inverted="darkmodeModule.isEnabled"
     >
-      <Elevator />
+      <template #navigation>
+        <Navigation>
+          <NavigationItem href="#about">About me.</NavigationItem>
+          <NavigationItem href="#projects">Recent Projects.</NavigationItem>
+        </Navigation>
+      </template>
+      <template #elevator>
+        <Elevator />
+      </template>
     </Hero>
     <Page anchor="about" :inverted="darkmodeModule.isEnabled">
       <TwoColumn>
@@ -45,7 +53,7 @@
       </TwoColumn>
     </Page>
     <Page :background="thumbPlank" :inverted="darkmodeModule.isEnabled" />
-    <Page :inverted="darkmodeModule.isEnabled">
+    <Page anchor="projects" :inverted="darkmodeModule.isEnabled">
       <Projects>
         <Project
           :thumbnail="projectAzureblob"
@@ -94,6 +102,8 @@ import Project from "@/components/Project.vue";
 import ProjectTag from "@/components/ProjectTag.vue";
 import TwoColumn from "@/components/TwoColumn.vue";
 import Footer from "@/components/Footer.vue";
+import Navigation from "@/components/Navigation.vue";
+import NavigationItem from "@/components/NavigationItem.vue";
 
 import thumbOverview from "@/assets/thumb-overview.jpg";
 import thumbPlank from "@/assets/thumb-plank.jpg";
@@ -117,7 +127,9 @@ import { getModule } from "vuex-module-decorators";
     Project,
     ProjectTag,
     Footer,
-    Overscroll
+    Overscroll,
+    Navigation,
+    NavigationItem
   }
 })
 export default class Home extends Vue {

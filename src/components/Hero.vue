@@ -2,8 +2,11 @@
   <header :class="['hero', { inverted }]">
     <div class="hero-background" :style="backgroundStyles"></div>
     <div class="hero-foreground">
+      <div class="hero-navigation">
+        <slot name="navigation"></slot>
+      </div>
       <div class="hero-elevator">
-        <slot></slot>
+        <slot name="elevator"></slot>
       </div>
     </div>
   </header>
@@ -42,6 +45,10 @@ export default class Hero extends Vue {
   @apply h-screen;
 
   @apply bg-accent;
+
+  @screen lg {
+    @apply min-h-800;
+  }
 
   .hero-background {
     @apply absolute;
