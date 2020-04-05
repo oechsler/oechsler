@@ -4,7 +4,6 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
-import "devicon/devicon.css";
 
 @Component
 export default class Devicon extends Vue {
