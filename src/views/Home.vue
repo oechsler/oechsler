@@ -1,10 +1,14 @@
 <template>
   <div class="home">
     <Overscroll message="Ich liebe dich Melli &hearts;" />
-    <Hero :background="thumbOverview" :scroll="scrollOffset" :inverted="true">
+    <Hero
+      :background="thumbOverview"
+      :scroll="scrollOffset"
+      :inverted="darkmodeModule.isEnabled"
+    >
       <Elevator />
     </Hero>
-    <Page anchor="about" :inverted="true">
+    <Page anchor="about" :inverted="darkmodeModule.isEnabled">
       <TwoColumn>
         <template #left>
           <About>
@@ -40,8 +44,8 @@
         </template>
       </TwoColumn>
     </Page>
-    <Page :background="thumbPlank" :inverted="true" />
-    <Page :inverted="true">
+    <Page :background="thumbPlank" :inverted="darkmodeModule.isEnabled" />
+    <Page :inverted="darkmodeModule.isEnabled">
       <Projects>
         <Project
           :thumbnail="projectAzureblob"
@@ -72,7 +76,7 @@
         </Project>
       </Projects>
     </Page>
-    <Footer :inverted="true" />
+    <Footer :inverted="darkmodeModule.isEnabled" />
   </div>
 </template>
 
@@ -97,6 +101,8 @@ import thumbPlank from "@/assets/thumb-plank.jpg";
 import projectAzureblob from "@/assets/project-azureblob.jpg";
 import projectDotfiles from "@/assets/project-dotfiles.jpg";
 import projectBaresharp from "@/assets/project-baresharp.jpg";
+import Darkmode from "../store/darkmode";
+import { getModule } from "vuex-module-decorators";
 
 @Component({
   components: {
@@ -111,32 +117,38 @@ import projectBaresharp from "@/assets/project-baresharp.jpg";
     Project,
     ProjectTag,
     Footer,
-    Overscroll,
-  },
+    Overscroll
+  }
 })
 export default class Home extends Vue {
-  readonly thumbOverview: string = thumbOverview;
-  readonly thumbPlank: string = thumbPlank;
+  private readonly thumbOverview: string = thumbOverview;
+  private readonly thumbPlank: string = thumbPlank;
 
-  readonly projectAzureblob: string = projectAzureblob;
-  readonly projectDotfiles: string = projectDotfiles;
-  readonly projectBaresharp: string = projectBaresharp;
+  private readonly projectAzureblob: string = projectAzureblob;
+  private readonly projectDotfiles: string = projectDotfiles;
+  private readonly projectBaresharp: string = projectBaresharp;
 
-  scrollTop = 0;
+  private darkmodeModule?: Darkmode;
 
-  get scrollOffset() {
+  private scrollTop = 0;
+
+  private get scrollOffset() {
     return this.scrollTop * 0.2;
   }
 
-  mounted() {
+  public created() {
+    this.darkmodeModule = getModule(Darkmode, this.$store);
+  }
+
+  public mounted() {
     window.addEventListener("scroll", this.onScroll, { passive: true });
   }
 
-  beforeDestroy() {
-    //window.removeEventListener("scroll", this.onScroll);
+  public beforeDestroy() {
+    window.removeEventListener("scroll", this.onScroll);
   }
 
-  onScroll() {
+  private onScroll() {
     const element = document.documentElement;
     this.scrollTop =
       (window.pageYOffset || element.scrollTop) - (element.clientTop || 0);

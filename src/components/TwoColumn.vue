@@ -33,6 +33,10 @@ export default class TwoColumn extends Vue {}
       @apply pr-6;
       @apply w-9/12;
     }
+
+    @screen lg {
+      @apply pr-0;
+    }
   }
 
   .two-column-right {
@@ -40,6 +44,10 @@ export default class TwoColumn extends Vue {}
 
     @screen md {
       @apply pt-0;
+      @apply w-4/12;
+    }
+
+    @screen lg {
       @apply w-3/12;
     }
 

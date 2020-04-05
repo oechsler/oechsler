@@ -29,7 +29,7 @@ export default class Hero extends Vue {
       backgroundPositionY: `-${this.scroll}px`,
       backgroundSize: this.scale ? `calc(100% * ${this.scale})` : null,
       filter: `blur(${this.blur}px) grayscale(${this.grayscale}%)`,
-      opacity: this.opacity,
+      opacity: this.opacity
     };
   }
 }
