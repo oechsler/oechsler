@@ -1,0 +1,10 @@
+{
+    email samuel@oechsler.it
+    acme_ca https://acme-staging-v02.api.letsencrypt.org/directory
+}
+
+oechsler.it, www.oechsler.it {
+    root * /var/www/html
+    try_files {path} {path}/ /index.html?{query}
+    file_server
+}
