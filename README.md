@@ -1,6 +1,6 @@
 # Personal website
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9a3bc2c8bd9c4d589df613113e0ed49a)](https://www.codacy.com?utm_source=github.com&utm_medium=referral&utm_content=Boxwrapper/oechsler&utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c7e930c24f8d4797ab611e5da66a47b6)](https://www.codacy.com/manual/Boxwrapper/oechsler?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Boxwrapper/oechsler&amp;utm_campaign=Badge_Grade)
 [![Build Status](https://travis-ci.com/Boxwrapper/oechsler.svg?token=n5VfjbXpcxkjTHSRuvoo&branch=master)](https://travis-ci.com/Boxwrapper/oechsler)
 
 This repository contains the code for my personal website. The application is based on the Vue.js framework, uses TypeScript and can be built as a Docker image.
