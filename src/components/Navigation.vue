@@ -10,6 +10,7 @@
 </template>
 
 <script lang="ts">
+import "reflect-metadata";
 import { Vue, Component } from "vue-property-decorator";
 import Brand from "@/components/Brand.vue";
 

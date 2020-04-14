@@ -12,6 +12,7 @@
 </template>
 
 <script lang="ts">
+import "reflect-metadata";
 import { Vue, Component } from "vue-property-decorator";
 import DeviconList from "@/components/DeviconList.vue";
 

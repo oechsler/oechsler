@@ -3,6 +3,7 @@
 </template>
 
 <script lang="ts">
+import "reflect-metadata";
 import { Component, Vue, Prop } from "vue-property-decorator";
 
 @Component

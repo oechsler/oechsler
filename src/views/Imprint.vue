@@ -16,6 +16,7 @@
 </template>
 
 <script lang="ts">
+import "reflect-metadata";
 import { Component, Vue } from "vue-property-decorator";
 import Page from "@/components/Page.vue";
 import Footer from "@/components/Footer.vue";
