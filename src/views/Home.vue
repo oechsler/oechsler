@@ -89,6 +89,7 @@
 </template>
 
 <script lang="ts">
+import "reflect-metadata";
 import { Component, Vue } from "vue-property-decorator";
 import Overscroll from "@/components/Overscroll.vue";
 import About from "@/components/About.vue";

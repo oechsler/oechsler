@@ -29,6 +29,7 @@
 </template>
 
 <script lang="ts">
+import "reflect-metadata";
 import { Vue, Component, Prop } from "vue-property-decorator";
 import Brand from "@/components/Brand.vue";
 

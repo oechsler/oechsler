@@ -6,6 +6,7 @@
 </template>
 
 <script lang="ts">
+import "reflect-metadata";
 import { Vue, Component } from "vue-property-decorator";
 import { getModule } from "vuex-module-decorators";
 

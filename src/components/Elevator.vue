@@ -37,6 +37,7 @@
 </template>
 
 <script lang="ts">
+import "reflect-metadata";
 import { Component, Vue } from "vue-property-decorator";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faGithub, faXbox } from "@fortawesome/free-brands-svg-icons";
