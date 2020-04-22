@@ -2,7 +2,9 @@
     email samuel@oechsler.it
 }
 
-oechsler.it, www.oechsler.it {
+http://localhost:8080 {
+    encode zstd gzip
+
     root * /var/www/html
     try_files {path} {path}/ /index.html?{query}
     file_server
