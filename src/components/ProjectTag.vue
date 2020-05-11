@@ -64,11 +64,15 @@ export default class ProjectTag extends Vue {
   }
 
   &.shell {
-    @apply bg-green-500;
+    @apply bg-orange-400;
   }
 
   &.c-sharp {
     @apply bg-purple-700;
+  }
+
+  &.vue {
+    @apply bg-green-500;
   }
 }
 </style>
