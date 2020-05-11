@@ -56,30 +56,31 @@
     <Page anchor="projects" :inverted="darkmodeModule.isEnabled">
       <Projects>
         <Project
-          :thumbnail="projectAzureblob"
-          title="Azure Blob"
-          description="Library used for abstraction of Azure Blob Storage in my golang projects."
-          href="https://github.com/oechsler/azureblob"
-        >
-          <ProjectTag language="Go" icon="go-plain" />
-          <ProjectTag language="GitHub" icon="github-plain" />
-        </Project>
-        <Project
-          :thumbnail="projectDotfiles"
-          title="Dotfiles"
-          description="Automatic install and maintainance of user configs and packages."
-          href="https://github.com/oechsler/dotfiles"
-        >
-          <ProjectTag language="Shell" icon="linux-plain" />
-          <ProjectTag language="GitHub" icon="github-plain" />
-        </Project>
-        <Project
           :thumbnail="projectBaresharp"
           title="Bare Sharp"
           description="Cross-Platform 2d sprite framework living on top of MonoGame."
           href="https://github.com/oechsler/BareSharp"
         >
           <ProjectTag language="C#" icon="csharp-plain" />
+          <ProjectTag language="GitHub" icon="github-plain" />
+        </Project>
+        <Project
+          :thumbnail="projectCozy"
+          title="Cozy"
+          description="A snugly hosting platform that delivers cloud services for the rest of us."
+          href="https://github.com/cozy-hosting"
+        >
+          <ProjectTag language="C#" icon="csharp-plain" />
+          <ProjectTag language="Vue" icon="vuejs-plain" />
+          <ProjectTag language="GitHub" icon="github-plain" />
+        </Project>
+        <Project
+          :thumbnail="projectDotfiles"
+          title="Dotfiles"
+          description="Automatic install and maintenance of user configs and packages."
+          href="https://github.com/oechsler/dotfiles"
+        >
+          <ProjectTag language="Shell" icon="linux-plain" />
           <ProjectTag language="GitHub" icon="github-plain" />
         </Project>
       </Projects>
@@ -109,9 +110,9 @@ import NavigationItem from "@/components/NavigationItem.vue";
 import thumbOverview from "@/assets/thumb-overview.jpg";
 import thumbPlank from "@/assets/thumb-plank.jpg";
 
-import projectAzureblob from "@/assets/project-azureblob.jpg";
-import projectDotfiles from "@/assets/project-dotfiles.jpg";
 import projectBaresharp from "@/assets/project-baresharp.jpg";
+import projectCozy from "@/assets/project-cozy.jpg";
+import projectDotfiles from "@/assets/project-dotfiles.jpg";
 import Darkmode from "../store/darkmode";
 import { getModule } from "vuex-module-decorators";
 
@@ -137,7 +138,7 @@ export default class Home extends Vue {
   private readonly thumbOverview: string = thumbOverview;
   private readonly thumbPlank: string = thumbPlank;
 
-  private readonly projectAzureblob: string = projectAzureblob;
+  private readonly projectCozy: string = projectCozy;
   private readonly projectDotfiles: string = projectDotfiles;
   private readonly projectBaresharp: string = projectBaresharp;
 
