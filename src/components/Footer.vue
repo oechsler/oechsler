@@ -17,11 +17,11 @@
       <section class="footer-provider">
         <h1>Delivered from the cloud by</h1>
         <a
-          href="https://bit.ly/3dWdl7G"
+          href="https://cozy.oechsler.it"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img :src="digitalocean" alt="Digitalocean Logo" />
+          <img :src="cozy" alt="cozy logo" />
         </a>
       </section>
     </div>
@@ -33,13 +33,13 @@ import "reflect-metadata";
 import { Vue, Component, Prop } from "vue-property-decorator";
 import Brand from "@/components/Brand.vue";
 
-import digitalocean from "@/assets/digital-ocean.png";
+import cozy from "@/assets/cozy-logo.png";
 
 @Component({ components: { Brand } })
 export default class Footer extends Vue {
   @Prop({ default: false }) readonly inverted!: boolean;
 
-  readonly digitalocean = digitalocean;
+  readonly cozy = cozy;
 }
 </script>
 
@@ -110,7 +110,7 @@ export default class Footer extends Vue {
 
       img {
         @apply pt-1;
-        @apply w-32;
+        @apply w-16;
       }
     }
 
