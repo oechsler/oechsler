@@ -15,6 +15,7 @@ and am always curious to experiment with some new ones
 - 🦦 *Go*
 - 🦜 *Swift*
 - 🐳 Docker
+- 🧭 Kubernetes
 
 The ones that are in *italics*, I have not used recently (the last quarter of the year)  
 and propbaly need some practice bevore using them again.
