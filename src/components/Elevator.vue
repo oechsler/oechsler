@@ -8,7 +8,7 @@
     <div class="elevator-description">
       <h1>Samuel Oechsler</h1>
       <h2>
-        21. Sudent, developer
+        21. Student, developer
         <a
           href="https://www.media-lesson.com/"
           target="_blank"
