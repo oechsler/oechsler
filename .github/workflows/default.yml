@@ -47,5 +47,5 @@ jobs:
         if: github.ref == 'refs/heads/master'
         run: kubectl --namespace=website \
              set image deployment frontend \
-             website=registry.digitalocean.com/oechsler/website:${{ env.STATE_RELEASE_VERSION }} \
+             website=registry.digitalocean.com/oechsler/website:${{ steps.version_bump.outputs.new_tag }} \
              --record
