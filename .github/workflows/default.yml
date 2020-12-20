@@ -28,7 +28,7 @@ jobs:
       - name: Build & Publish Docker Image
         uses: elgohr/Publish-Docker-Github-Action@3.02
         with:
-          name: oechsler/website
+          name: registry.digitalocean.com/oechsler/website
           username: ${{ secrets.DO_PERSONAL_TOKEN }}
           password: ${{ secrets.DO_PERSONAL_TOKEN }}
           registry: registry.digitalocean.com
