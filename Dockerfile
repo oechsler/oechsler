@@ -1,4 +1,4 @@
-FROM node:lts-alpine as BUILD
+FROM node:current-alpine as BUILD
 
 # Install dependencies
 RUN apk update && \
@@ -8,7 +8,9 @@ RUN apk update && \
 RUN mkdir /project
 WORKDIR /project
 COPY . .
-RUN yarn install
+RUN yarn install && \
+    yarn build && \
+    yarn generate
 
 # Build project into /project/build
 RUN yarn build
