@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+          
+      - name: Build & Publish Docker Image
+        uses: elgohr/Publish-Docker-Github-Action@3.02
+        with:
+          name: oechsler/website
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+          registry: registry.digitalocean.com
+          tags: "latest,${{ env.STATE_RELEASE_VERSION }}"
+          no_push: ${{ github.event_name == 'pull_request' }}
+          
+      - name: Authenticate with Kubernetes
+        uses: matootie/dokube@v1.3.4
+        with:
+          personalAccessToken: ${{ secrets.DO_PERSONAL_TOKEN }}
+          clusterName: oechsler-kubernetes
+          namespace: website
+          
+      - name: Deploy to Kubernetes
+        run: kubectl set image deployment frontend \
+             website=registry.digitalocean.com/oechsler/website:${{ env.STATE_RELEASE_VERSION }} \
+             --record
