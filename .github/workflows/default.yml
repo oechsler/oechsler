@@ -22,18 +22,18 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
-          release_name: "Release ${{ github.ref }}"
+          release_name: ${{ github.ref }}
           draft: true
       
       - name: Build & Publish Docker Image
         uses: elgohr/Publish-Docker-Github-Action@3.02
         with:
-          name: registry.digitalocean.com/oechsler/website
+          name: oechsler/website
           username: ${{ secrets.DO_PERSONAL_TOKEN }}
           password: ${{ secrets.DO_PERSONAL_TOKEN }}
           registry: registry.digitalocean.com
           tags: "latest,${{ env.STATE_RELEASE_VERSION }}"
-          no_push: ${{ github.event_name == 'pull_request' }}
+          #no_push: ${{ github.event_name == 'pull_request' }}
           
       - name: Authenticate with Kubernetes
         uses: matootie/dokube@v1.3.4
