@@ -18,8 +18,8 @@ jobs:
         uses: elgohr/Publish-Docker-Github-Action@3.02
         with:
           name: oechsler/website
-          username: ${{ secrets.REGISTRY_USERNAME }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
+          username: ${{ secrets.DO_PERSONAL_TOKEN }}
+          password: ${{ secrets.DO_PERSONAL_TOKEN }}
           registry: registry.digitalocean.com
           tags: "latest,${{ env.STATE_RELEASE_VERSION }}"
           no_push: ${{ github.event_name == 'pull_request' }}
