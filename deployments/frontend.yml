@@ -29,7 +29,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: frontend
+  name: frontend-traefik-ingress
   namespace: website
 
 spec:
@@ -54,7 +54,7 @@ spec:
   - match: Host(`oechsler.it`)
     kind: Rule
     services:
-    - name: frontend
+    - name: frontend-traefik-ingress
       port: 8080
 
 ---
@@ -71,7 +71,7 @@ spec:
   - match: Host(`oechsler.it`)
     kind: Rule
     services:
-    - name: frontend
+    - name: frontend-traefik-ingress
       port: 8080
   tls:
     certResolver: default

@@ -51,7 +51,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend
+  name: backend-traefik-ingress
   namespace: website
 
 spec:
@@ -62,12 +62,13 @@ spec:
   selector:
     app: backend
 
+---
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: backend-admin-web
   namespace: website
-  
+
 spec:
   entryPoints:
     - web
@@ -75,7 +76,7 @@ spec:
   - match: Host(`oechsler.it`) && PathPrefix(`/ghost`)
     kind: Rule
     services:
-    - name: backend
+    - name: backend-traefik-ingress
       port: 2368
 
 ---
@@ -92,7 +93,7 @@ spec:
   - match: Host(`oechsler.it`) && PathPrefix(`/ghost`)
     kind: Rule
     services:
-    - name: backend
+    - name: backend-traefik-ingress
       port: 2368
   tls:
     certResolver: default
