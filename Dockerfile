@@ -1,4 +1,4 @@
-FROM node:current-alpine as BUILD
+FROM node:lts-alpine as BUILD
 
 # Install dependencies
 RUN apk update && \
