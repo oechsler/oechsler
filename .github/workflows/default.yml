@@ -17,13 +17,9 @@ jobs:
         uses: actions/checkout@v2
       
       - name: Create a Release
-        uses: actions/create-release@v1.1.4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: juliansangillo/tag-version@v1.5
         with:
-          tag_name: ${{ github.ref }}
-          release_name: "Release ${{ env.STATE_RELEASE_VERSION }}"
-          draft: true
+          production-branch: master
       
       - name: Build & Publish Docker Image
         uses: elgohr/Publish-Docker-Github-Action@3.02
