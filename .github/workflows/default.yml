@@ -16,22 +16,26 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
       
-      - name: Create a Release
-        uses: hennejg/github-tag-action@v4.2.4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - id: version_bump
+        name: Bump version and push tag
+        if: github.ref == 'refs/heads/master'
+        uses: anothrNick/github-tag-action@1.26.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
 
-      - name: Build & Publish Docker Image
+      - name: Build & publish Docker image
         uses: elgohr/Publish-Docker-Github-Action@3.02
         with:
           name: oechsler/website
           username: ${{ secrets.DO_PERSONAL_TOKEN }}
           password: ${{ secrets.DO_PERSONAL_TOKEN }}
           registry: registry.digitalocean.com
-          tags: "latest,${{ env.STATE_RELEASE_VERSION }}"
-          #no_push: ${{ github.event_name == 'pull_request' }}
+          tags: "latest,${{ version_bump.outputs.new_tag }}"
+          no_push: ${{ github.ref != 'refs/heads/master' }}
           
       - name: Authenticate with Kubernetes
+        if: github.ref == 'refs/heads/master'
         uses: matootie/dokube@v1.3.4
         with:
           personalAccessToken: ${{ secrets.DO_PERSONAL_TOKEN }}
@@ -39,6 +43,8 @@ jobs:
           namespace: website
           
       - name: Deploy to Kubernetes
-        run: kubectl set image deployment frontend \
+        if: github.ref == 'refs/heads/master'
+        run: kubectl --namespace=website \
+             set image deployment frontend \
              website=registry.digitalocean.com/oechsler/website:${{ env.STATE_RELEASE_VERSION }} \
              --record
