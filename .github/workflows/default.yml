@@ -1,0 +1,51 @@
+name: Build Pipeline
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  
+  workflow_dispatch:
+  
+jobs:
+  build:
+    name: Build and deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      
+      - id: version_bump
+        name: Bump version and push tag
+        if: github.ref == 'refs/heads/master'
+        uses: anothrNick/github-tag-action@1.26.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
+
+      - name: Build and publish Docker image
+        uses: elgohr/Publish-Docker-Github-Action@3.02
+        with:
+          name: oechsler/website
+          username: ${{ secrets.DO_PERSONAL_TOKEN }}
+          password: ${{ secrets.DO_PERSONAL_TOKEN }}
+          registry: registry.digitalocean.com
+          tags: "latest,${{ steps.version_bump.outputs.new_tag }}"
+          no_push: ${{ github.ref != 'refs/heads/master' }}
+          
+      - name: Authenticate with Kubernetes
+        if: github.ref == 'refs/heads/master'
+        uses: matootie/dokube@v1.3.4
+        with:
+          personalAccessToken: ${{ secrets.DO_PERSONAL_TOKEN }}
+          clusterName: oechsler-kubernetes
+          namespace: website
+          
+      - name: Deploy to Kubernetes
+        if: github.ref == 'refs/heads/master'
+        run: kubectl --namespace=website \
+             set image deployment frontend \
+             website=registry.digitalocean.com/oechsler/website:${{ steps.version_bump.outputs.new_tag }} \
+             --record

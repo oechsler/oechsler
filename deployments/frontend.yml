@@ -17,10 +17,10 @@ spec:
         app: frontend
     spec:
       imagePullSecrets:
-        - name: oechsler-azurecr
+        - name: oechsler
       containers:
         - name: website
-          image: oechsler.azurecr.io/oechsler/website:latest
+          image: registry.digitalocean.com/oechsler/website:latest
           ports:
             - name: http
               containerPort: 8080
