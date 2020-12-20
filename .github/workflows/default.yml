@@ -21,8 +21,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.GITHUB_REF }}
-          release_name: "Automatic Release"
+          tag_name: ${{ github.ref }}
+          release_name: "Release ${{ github.ref }}"
           draft: true
       
       - name: Build & Publish Docker Image
