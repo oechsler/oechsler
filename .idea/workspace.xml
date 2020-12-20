@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d2a4f17c-22c8-45c7-ad91-dec152b36935" name="Default Changelist" comment="Add cozy project card">
+      <change beforePath="$PROJECT_DIR$/deployments/backend.yml" beforeDir="false" afterPath="$PROJECT_DIR$/deployments/backend.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deployments/frontend.yml" beforeDir="false" afterPath="$PROJECT_DIR$/deployments/frontend.yml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1blnPWMJ7CHdnsqewl5RepwyteN" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.Serve">
+    <configuration name="Run in Docker" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="website:debug" />
+          <option name="buildCliOptions" value="--rm" />
+          <option name="command" value="" />
+          <option name="containerName" value="website" />
+          <option name="entrypoint" value="" />
+          <option name="commandLineOptions" value="" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="Serve" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="serve" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Docker.Run in Docker" />
+      <item itemvalue="npm.Serve" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d2a4f17c-22c8-45c7-ad91-dec152b36935" name="Default Changelist" comment="" />
+      <created>1589215523789</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589215523789</updated>
+      <workItem from="1589215528258" duration="2006000" />
+      <workItem from="1594220813906" duration="9000" />
+      <workItem from="1594220837644" duration="30000" />
+      <workItem from="1594220882576" duration="3000" />
+      <workItem from="1595767228915" duration="2426000" />
+      <workItem from="1600185515831" duration="789000" />
+      <workItem from="1606923637700" duration="103000" />
+      <workItem from="1606923809564" duration="24000" />
+      <workItem from="1606923868362" duration="287000" />
+    </task>
+    <task id="LOCAL-00001" summary="Add cozy project card">
+      <created>1589217384951</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1589217384951</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add cozy project card" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add cozy project card" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="968" y="446" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1606923819601">
+      <screen x="0" y="25" width="2560" height="1354" />
+    </state>
+    <state x="968" y="446" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.25.2560.1354@0.25.2560.1354" timestamp="1606923819601" />
+    <state width="2262" height="341" key="GridCell.Tab.0.bottom" timestamp="1600243498365">
+      <screen x="0" y="23" width="2560" height="1362" />
+    </state>
+    <state width="2262" height="341" key="GridCell.Tab.0.bottom/0.23.2560.1362@0.23.2560.1362" timestamp="1600243498365" />
+    <state width="2262" height="341" key="GridCell.Tab.0.center" timestamp="1600243498365">
+      <screen x="0" y="23" width="2560" height="1362" />
+    </state>
+    <state width="2262" height="341" key="GridCell.Tab.0.center/0.23.2560.1362@0.23.2560.1362" timestamp="1600243498365" />
+    <state width="2262" height="341" key="GridCell.Tab.0.left" timestamp="1600243498365">
+      <screen x="0" y="23" width="2560" height="1362" />
+    </state>
+    <state width="2262" height="341" key="GridCell.Tab.0.left/0.23.2560.1362@0.23.2560.1362" timestamp="1600243498365" />
+    <state width="2262" height="341" key="GridCell.Tab.0.right" timestamp="1600243498365">
+      <screen x="0" y="23" width="2560" height="1362" />
+    </state>
+    <state width="2262" height="341" key="GridCell.Tab.0.right/0.23.2560.1362@0.23.2560.1362" timestamp="1600243498365" />
+    <state x="789" y="354" key="SettingsEditor" timestamp="1606923714423">
+      <screen x="0" y="25" width="2560" height="1354" />
+    </state>
+    <state x="789" y="354" key="SettingsEditor/0.25.2560.1354@0.25.2560.1354" timestamp="1606923714423" />
+  </component>
+</project>

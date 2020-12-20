@@ -18,7 +18,7 @@ and am always curious to experiment with some new ones
 - 🧭 Kubernetes
 
 The ones that are in *italics*, I have not used recently (the last quarter of the year)  
-and propbaly need some practice before using them again.
+and probably need some practice before using them again.
 
 # 
 
