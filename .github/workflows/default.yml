@@ -1,4 +1,4 @@
-name: CI
+name: Build Pipeline
 
 on:
   push:
@@ -10,6 +10,7 @@ on:
   
 jobs:
   build:
+    name: Build and deploy
     runs-on: ubuntu-latest
 
     steps:
