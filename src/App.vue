@@ -17,7 +17,7 @@ import Darkmode from "./store/darkmode";
 export default class App extends Vue {
   private darkmodeModule?: Darkmode;
 
-  public created() {
+  public created(): void {
     this.darkmodeModule = getModule(Darkmode, this.$store);
   }
 }

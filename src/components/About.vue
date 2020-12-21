@@ -18,8 +18,8 @@ import DeviconList from "@/components/DeviconList.vue";
 
 @Component({
   components: {
-    DeviconList
-  }
+    DeviconList,
+  },
 })
 export default class About extends Vue {}
 </script>

@@ -14,11 +14,11 @@ export default class Overscroll extends Vue {
 
   private scrollTop = 0;
 
-  public mounted() {
+  public mounted(): void {
     window.addEventListener("scroll", this.onScroll, { passive: true });
   }
 
-  public beforeDestroy() {
+  public beforeDestroy(): void {
     window.removeEventListener("scroll", this.onScroll);
   }
 

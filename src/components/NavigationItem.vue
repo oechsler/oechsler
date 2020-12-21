@@ -14,7 +14,7 @@ import { Vue, Prop, Component } from "vue-property-decorator";
 export default class NaviagtionItem extends Vue {
   @Prop({ required: true }) readonly href!: string;
 
-  private onClick({ currentTarget }: MouseEvent) {
+  private onClick({ currentTarget }: MouseEvent): void {
     const id = (currentTarget as HTMLAnchorElement).href.split("#")[1];
     const elem = document.getElementById(id);
 

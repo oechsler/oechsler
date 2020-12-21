@@ -12,16 +12,16 @@ export default class Darkmode extends VuexModule {
   }
 
   @Action({ commit: STATE_CHANGE })
-  public enable() {
+  public enable(): boolean {
     return true;
   }
 
   @Action({ commit: STATE_CHANGE })
-  public disable() {
+  public disable(): boolean {
     return false;
   }
 
-  get isEnabled() {
+  get isEnabled(): boolean {
     return this.enabled;
   }
 }

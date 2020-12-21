@@ -27,13 +27,13 @@ export default class Hero extends Vue {
   @Prop({ default: 0.1 }) readonly opacity!: number;
 
   // Computed styles for the background element
-  get backgroundStyles() {
+  get backgroundStyles(): unknown {
     return {
       backgroundImage: `url(${this.background})`,
       backgroundPositionY: `-${this.scroll}px`,
       backgroundSize: this.scale ? `calc(100% * ${this.scale})` : null,
       filter: `blur(${this.blur}px) grayscale(${this.grayscale}%)`,
-      opacity: this.opacity
+      opacity: this.opacity,
     };
   }
 }

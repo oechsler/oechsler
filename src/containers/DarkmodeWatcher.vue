@@ -18,11 +18,11 @@ export default class DarkmodeWatcher extends Vue {
   private onChangeListener = ({ matches, media }: MediaQueryListEvent) =>
     this.onChange(matches, media);
 
-  public created() {
+  public created(): void {
     this.darkmodeModule = getModule(Darkmode, this.$store);
   }
 
-  public mounted() {
+  public mounted(): void {
     if (!window.matchMedia) return;
 
     const lightQuery = window.matchMedia(this.DARK);
@@ -34,14 +34,14 @@ export default class DarkmodeWatcher extends Vue {
     this.onChange(lightQuery.matches, lightQuery.media);
   }
 
-  public beforeDestroy() {
+  public beforeDestroy(): void {
     if (!window.matchMedia) return;
 
     window.matchMedia(this.LIGHT).removeListener(this.onChangeListener);
     window.matchMedia(this.DARK).removeListener(this.onChangeListener);
   }
 
-  private onChange(matches: boolean, media: string) {
+  private onChange(matches: boolean, media: string): void {
     if (!matches) return;
 
     switch (media) {
