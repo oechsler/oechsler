@@ -17,7 +17,7 @@ import { Component, Vue } from "vue-property-decorator";
 export default class TwoColumn extends Vue {}
 </script>
 
-<style lang="scss" scope>
+<style lang="scss" scoped>
 .two-column {
   @screen md {
     @apply flex;

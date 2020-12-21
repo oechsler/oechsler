@@ -21,25 +21,25 @@ export default class Page extends Vue {
   footerHeight = 0;
 
   // Computed styles for the root element
-  get rootStyles() {
+  get rootStyles(): unknown {
     return {
       backgroundImage: this.background ? `url(${this.background})` : null,
       filter: this.background && this.inverted ? `contrast(140%)` : null,
       opacity: this.background && this.inverted ? `0.4` : null,
       minHeight: this.screen
         ? `calc(${this.windowHeight}px - ${this.footerHeight}px)`
-        : null
+        : null,
     };
   }
 
-  mounted() {
+  public mounted(): void {
     if (screen) {
       window.addEventListener("resize", this.onResize);
       this.onResize();
     }
   }
 
-  onResize() {
+  onResize(): void {
     this.windowHeight = window.innerHeight;
     this.footerHeight = document.getElementsByTagName("footer")[0].offsetHeight;
   }
