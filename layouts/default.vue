@@ -1,55 +1,40 @@
 <template>
-  <div>
+  <div id="app" :class="{ inverted: darkmodeModule.isEnabled }">
+    <DarkmodeWatcher />
     <Nuxt />
   </div>
 </template>
 
-<style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+<script lang="ts">
+import 'reflect-metadata'
+import { Vue, Component } from 'vue-property-decorator'
+import { getModule } from 'vuex-module-decorators'
+
+import Darkmode from '@/store/darkmode'
+import DarkmodeWatcher from '@/containers/DarkmodeWatcher.vue'
+
+@Component({ components: { DarkmodeWatcher } })
+export default class Default extends Vue {
+  private darkmodeModule?: Darkmode
+
+  public created() {
+    this.darkmodeModule = getModule(Darkmode)
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+html,
+body {
+  @apply m-0;
+
+  @apply font-sans;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.inverted {
+  @apply bg-gray-900;
 }
 </style>
