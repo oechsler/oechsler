@@ -34,7 +34,13 @@ jobs:
         run: |
            az acr login -n oechsler
 
+      - name: Build Docker image
+        if: github.ref != 'refs/heads/master'
+        run: |
+          docker build . -t website:latest
+
       - name: Build and publish Docker image
+        if: github.ref == 'refs/heads/master'
         uses: mr-smithers-excellent/docker-build-push@v5.2
         with:
           image: website
