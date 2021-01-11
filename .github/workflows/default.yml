@@ -28,7 +28,7 @@ jobs:
       - name: Login to Azure via Azure-CLI
         uses: azure/login@v1
         with:
-          credentials: ${{ secrets.AZURE_CREDENTIALS }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
           
       - name: Retrieve Azure Container Registry credentials
         run: |
