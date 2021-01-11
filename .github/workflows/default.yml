@@ -24,25 +24,39 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
+          
+      - name: Login to Azure via Azure-CLI
+        if: github.ref == 'refs/heads/master'
+        uses: azure/login@v1
+        with:
+          creds: ${{secrets.AZURE_CREDENTIALS}}
+          
+      - name: Retrieve Azure Container Registry credentials
+        if: github.ref == 'refs/heads/master'
+        run: |
+           az acr login -n oechsler
 
       - name: Build and publish Docker image
         uses: elgohr/Publish-Docker-Github-Action@3.02
         with:
-          name: oechsler/website
-          username: ${{ secrets.DO_PERSONAL_TOKEN }}
-          password: ${{ secrets.DO_PERSONAL_TOKEN }}
-          registry: registry.digitalocean.com
+          name: website
+          username: oechsler
+          password: ${{ secrets.AZURE_CR_TOKEN }}
+          registry: oechsler.azurecr.io
           tags: "latest,${{ steps.version_bump.outputs.new_tag }}"
           no_push: ${{ github.ref != 'refs/heads/master' }}
           
-      - name: Authenticate with Kubernetes
+      - name: Setup Azure Kubernetes Services
         if: github.ref == 'refs/heads/master'
-        uses: matootie/dokube@v1.3.4
-        with:
-          personalAccessToken: ${{ secrets.DO_PERSONAL_TOKEN }}
-          clusterName: oechsler-kubernetes
-          namespace: website
+        uses: Azure/setup-kubectl@v1
+      
+      - name: Retrieve Azure Kubernetes Cluster credentials
+        if: github.ref == 'refs/heads/master'
+        run: |
+           az aks get-credentials -g Infrastructure -n oechsler
           
       - name: Deploy to Kubernetes
         if: github.ref == 'refs/heads/master'
-        run: kubectl set image deployment frontend website="registry.digitalocean.com/oechsler/website:${{ steps.version_bump.outputs.new_tag }}" --record
+        run: |
+          kubectl config set-context --current --namespace=website
+          kbectl set image deployment frontend website="oechsler.azurecr.io/website:${{ steps.version_bump.outputs.new_tag }}" --record
