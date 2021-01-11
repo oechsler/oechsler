@@ -57,11 +57,12 @@
       <Projects>
         <Project
           :thumbnail="projectBaresharp"
-          title="Bare Sharp"
-          description="Cross-Platform 2d sprite framework living on top of MonoGame."
-          href="https://github.com/oechsler/BareSharp"
+          title="Bare++"
+          description="Native reimplementation of my cross-platform 2d sprite framework."
+          href="https://github.com/oechsler/Bare"
         >
-          <ProjectTag language="C#" icon="csharp-plain" />
+          <ProjectTag language="WIP" />
+          <ProjectTag language="C++" icon="csharp-plain" />
           <ProjectTag language="GitHub" icon="github-plain" />
         </Project>
         <Project
