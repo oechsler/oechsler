@@ -38,7 +38,7 @@ jobs:
         uses: mr-smithers-excellent/docker-build-push@v5.2
         with:
           image: website
-          tags: latest, ${{ steps.version_bump.outputs.new_tag }
+          tags: latest, ${{ steps.version_bump.outputs.new_tag }}
           registry: oechsler.azurecr.io
           
       - name: Setup Azure Kubernetes Services
