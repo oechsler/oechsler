@@ -35,12 +35,11 @@ jobs:
            az acr login -n oechsler
 
       - name: Build and publish Docker image
-        uses: elgohr/Publish-Docker-Github-Action@3.02
+        uses: mr-smithers-excellent/docker-build-push@v5.2
         with:
-          name: website
+          image: website
+          tags: latest, ${{ steps.version_bump.outputs.new_tag }
           registry: oechsler.azurecr.io
-          tags: "latest,${{ steps.version_bump.outputs.new_tag }}"
-          no_push: ${{ github.ref != 'refs/heads/master' }}
           
       - name: Setup Azure Kubernetes Services
         uses: Azure/setup-kubectl@v1
