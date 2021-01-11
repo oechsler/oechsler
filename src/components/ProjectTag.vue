@@ -1,7 +1,7 @@
 <template>
   <div :class="['project-tag', languageClass]">
-    <Devicon :icon="icon" />
-    <span>{{ language }}</span>
+    <Devicon v-if="icon !== undefined" :icon="icon" />
+    <span :class="[icon === undefined ? 'no-icon' : '']">{{ language }}</span>
   </div>
 </template>
 
@@ -13,10 +13,13 @@ import Devicon from "./Devicon.vue";
 @Component({ components: { Devicon } })
 export default class ProjectTag extends Vue {
   @Prop({ required: true }) readonly language!: string;
-  @Prop({ required: true }) readonly icon!: string;
+  @Prop() readonly icon?: string;
 
   get languageClass() {
-    return this.language.toLowerCase().replace("#", "-sharp");
+    return this.language
+      .toLowerCase()
+      .replace("#", "-sharp")
+      .replace("++", "-plusplus");
   }
 }
 </script>
@@ -57,6 +60,10 @@ export default class ProjectTag extends Vue {
 
   span {
     @apply pl-1;
+
+    &.no-icon {
+      @apply pl-0;
+    }
   }
 
   &.go {
@@ -67,12 +74,21 @@ export default class ProjectTag extends Vue {
     @apply bg-orange-400;
   }
 
+  &.c-plusplus {
+    @apply bg-pink-600;
+  }
+
   &.c-sharp {
     @apply bg-purple-700;
   }
 
   &.vue {
     @apply bg-green-500;
+  }
+
+  &.wip {
+    @apply text-black;
+    @apply bg-yellow-500;
   }
 }
 </style>
