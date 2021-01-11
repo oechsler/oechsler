@@ -15,7 +15,7 @@ export default class ProjectTag extends Vue {
   @Prop({ required: true }) readonly language!: string;
   @Prop({ required: true }) readonly icon!: string;
 
-  get languageClass(): string {
+  get languageClass() {
     return this.language.toLowerCase().replace("#", "-sharp");
   }
 }
