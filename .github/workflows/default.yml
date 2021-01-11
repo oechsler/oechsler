@@ -26,13 +26,11 @@ jobs:
           WITH_V: true
           
       - name: Login to Azure via Azure-CLI
-        if: github.ref == 'refs/heads/master'
         uses: azure/login@v1
         with:
           creds: ${{secrets.AZURE_CREDENTIALS}}
           
       - name: Retrieve Azure Container Registry credentials
-        if: github.ref == 'refs/heads/master'
         run: |
            az acr login -n oechsler
 
@@ -47,11 +45,9 @@ jobs:
           no_push: ${{ github.ref != 'refs/heads/master' }}
           
       - name: Setup Azure Kubernetes Services
-        if: github.ref == 'refs/heads/master'
         uses: Azure/setup-kubectl@v1
       
       - name: Retrieve Azure Kubernetes Cluster credentials
-        if: github.ref == 'refs/heads/master'
         run: |
            az aks get-credentials -g Infrastructure -n oechsler
           
