@@ -22,19 +22,20 @@
           <About>
             <template #about>
               <strong>I'm a computer science student</strong> at
-              Baden-Wuerttemberg Cooperative State University in Karlsruhe and
+              Baden-Württemberg Cooperative State University in Karlsruhe and
               work for medialesson GmbH in Pforzheim. During my spare time I
-              like to create awesome apps, of which you can find a selection
+              like to create awesome apps & services, of which you can find a selection
               below, other stuff can be found on my GitHub.
             </template>
             <template #technologies>
               <Devicon icon="vuejs-plain" />
               <Devicon icon="react-original" />
-              <Devicon icon="sass-original" />
-              <Devicon icon="typescript-original" />
+              <Devicon icon="angularjs-plain" />
               <Devicon icon="csharp-line" />
+              <Devicon icon="kotlin-plain" />
+              <Devicon icon="typescript-original" />
               <Devicon icon="go-plain" />
-              <Devicon icon="swift-plain" />
+              <Devicon icon="kubernetes-plain" />
               <Devicon icon="docker-plain" />
             </template>
           </About>
@@ -56,6 +57,15 @@
     <Page anchor="projects" :inverted="darkmodeModule.isEnabled">
       <Projects>
         <Project
+          :thumbnail="projectCozy"
+          title="Cozy"
+          description="A snugly hosting platform that delivers cloud services for the rest of us."
+          href="https://github.com/cozy-hosting"
+        >
+          <ProjectTag language="Kotlin" icon="kotlin-plain" />
+          <ProjectTag language="Vue" icon="vuejs-plain" />
+        </Project>
+        <Project
           :thumbnail="projectBaresharp"
           title="Bare++"
           description="Native reimplementation of my cross-platform 2d sprite framework."
@@ -63,16 +73,6 @@
         >
           <ProjectTag language="WIP" />
           <ProjectTag language="C++" icon="csharp-plain" />
-          <ProjectTag language="GitHub" icon="github-plain" />
-        </Project>
-        <Project
-          :thumbnail="projectCozy"
-          title="Cozy"
-          description="A snugly hosting platform that delivers cloud services for the rest of us."
-          href="https://github.com/cozy-hosting"
-        >
-          <ProjectTag language="C#" icon="csharp-plain" />
-          <ProjectTag language="Vue" icon="vuejs-plain" />
           <ProjectTag language="GitHub" icon="github-plain" />
         </Project>
         <Project

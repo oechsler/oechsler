@@ -8,7 +8,7 @@
     <div class="elevator-description">
       <h1>Samuel Oechsler</h1>
       <h2>
-        21. Student, developer
+        22. Student, developer
         <a
           href="https://www.media-lesson.com/"
           target="_blank"
@@ -26,11 +26,11 @@
         <font-awesome-icon :icon="githubIcon" />
       </a>
       <a
-        href="http://live.xbox.com/de-DE/Profile?gamertag=MuratYilderim"
+        href="https://steamcommunity.com/id/Yilderim"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <font-awesome-icon :icon="xboxIcon" />
+        <font-awesome-icon :icon="steamIcon" />
       </a>
     </div>
   </div>
@@ -40,12 +40,12 @@
 import "reflect-metadata";
 import { Component, Vue } from "vue-property-decorator";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { faGithub, faXbox } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faSteam } from "@fortawesome/free-brands-svg-icons";
 
 @Component({ components: { FontAwesomeIcon } })
 export default class Elevator extends Vue {
   githubIcon = faGithub;
-  xboxIcon = faXbox;
+  steamIcon = faSteam;
 }
 </script>
 

@@ -95,6 +95,10 @@ export default class Project extends Vue {
     }
   }
 
+  a[href=""] {
+    @apply cursor-default;
+  }
+
   img {
     @apply w-full;
 
