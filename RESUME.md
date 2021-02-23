@@ -6,7 +6,7 @@ Hi, I'm Sam. Currently, I'm a computer science student at the Baden-Württemberg
 in Karlsruhe. Prior to that I've been dreaming in code since pretty much the beginning of the last decade and thus have
 gained roughly eight years now of *personal experience* in coding with various technologies and languages, something I 
 always like to dedicate some of my free time to. Whilst studying I have also gained roughly two years of experience in 
-the industry now working at medialesson GmbH in Pforzheim. 
+the industry now, working at medialesson GmbH in Pforzheim. 
 
 ## Languages
 
@@ -24,16 +24,12 @@ the industry now working at medialesson GmbH in Pforzheim.
 
 ### Tech related
 
+- 2017 &emsp; Host: Creating games with Love2d &minus; "Projekttage" at Liese-Meitner Gymansium
+- 2015 &emsp; Host: Creating games with Unity 3D &minus; "Projekttage" at Liese-Meitner Gymansium
 - 2015 &emsp; BOGY internship at medialesson GmbH in Pforzheim
 - 2014 &emsp; Internship at SYZYGY in Bad-Homburg
-
-
 - 2014 &emsp; Hackathon at SYZYGY in Frankfurt
 - 2013 &emsp; Hackathon at Meyle+Müller / medialesson in Pforzheim
-
-
-- 2015 &emsp; Host: Creating games with Unity 3D &minus; "Projekttage" at Liese-Meitner Gymansium
-- 2015 &emsp; Host: Creating games with Love2d &minus; "Projekttage" at Liese-Meitner Gymansium
 
 ### Non-tech related
 
@@ -56,7 +52,7 @@ the industry now working at medialesson GmbH in Pforzheim.
 
 ### Tools
 
-- Docker &minus; very confident
+- Docker, Git &minus; very confident
 - Azure DevOps, Azure Cloud, Kubernetes &minus; confident
 - Helm &minus; entry-level
 
