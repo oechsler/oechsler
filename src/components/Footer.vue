@@ -11,7 +11,7 @@
         <p>
           <router-link to="/imprint">Imprint</router-link>
           &nbsp;
-          <span>− Copyright © 2020 Samuel Oechsler</span>
+          <span>− Copyright © 2021 Samuel Oechsler</span>
         </p>
       </section>
       <section class="footer-provider">
