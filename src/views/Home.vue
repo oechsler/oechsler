@@ -64,6 +64,7 @@
         >
           <ProjectTag language="Kotlin" icon="kotlin-plain" />
           <ProjectTag language="Vue" icon="vuejs-plain" />
+          <ProjectTag language="GitHub" icon="github-plain" />
         </Project>
         <Project
           :thumbnail="projectBaresharp"
