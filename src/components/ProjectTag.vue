@@ -74,6 +74,10 @@ export default class ProjectTag extends Vue {
     @apply bg-orange-400;
   }
 
+  &.kotlin {
+    @apply bg-orange-600;
+  }
+
   &.c-plusplus {
     @apply bg-pink-600;
   }
