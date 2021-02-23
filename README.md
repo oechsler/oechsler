@@ -1,6 +1,6 @@
 ### Hey you,
 
-**I'm a computer science student** at Baden-Wuerttemberg Cooperative State University in Karlsruhe and work for medialesson GmbH in Pforzheim. During my spare time I like to create awesome apps, of which you can find a selection pinned below, other stuff can be found in the `Repositories` tab.   
+**I'm a computer science student** at Baden-Württemberg Cooperative State University in Karlsruhe and work for medialesson GmbH in Pforzheim. During my spare time I like to create awesome apps & services, of which you can find a selection pinned below, other stuff can be found in the `Repositories` tab.   
 
 #### Technologies
 I know a fair bit of technologies and languages already  
@@ -8,17 +8,17 @@ and am always curious to experiment with some new ones
 
 - 🖼 Vue.js
 - ⚛️ *React*
-- 👓 Sass
-- 🏙 TypeScript
+- 🅰️ Angular
 - 🧰 .Net Core
 - 🏝 Kotlin
-- 🦦 *Go*
+- 🏙 TypeScript
+- 🦦 Go
 - 🦜 *Swift*
-- 🐳 Docker
 - 🧭 Kubernetes
+- 🐳 Docker
 
 The ones that are in *italics*, I have not used recently (the last quarter of the year)  
-and propbaly need some practice before using them again.
+and probably need some practice before using them again.
 
 # 
 
