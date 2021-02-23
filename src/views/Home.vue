@@ -22,9 +22,9 @@
           <About>
             <template #about>
               <strong>I'm a computer science student</strong> at
-              Baden-Wuerttemberg Cooperative State University in Karlsruhe and
+              Baden-Württemberg Cooperative State University in Karlsruhe and
               work for medialesson GmbH in Pforzheim. During my spare time I
-              like to create awesome apps, of which you can find a selection
+              like to create awesome apps & services, of which you can find a selection
               below, other stuff can be found on my GitHub.
             </template>
             <template #technologies>
