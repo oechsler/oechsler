@@ -17,11 +17,11 @@
       <section class="footer-provider">
         <h1>Delivered from the cloud by</h1>
         <a
-          href="https://azure.com"
+          href="https://m.do.co/c/e1ff9e0b9877"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img :src="azure" alt="azure logo" />
+          <img :src="digitalOcean" alt="DigitalOcean logo" />
         </a>
       </section>
     </div>
@@ -33,13 +33,13 @@ import "reflect-metadata";
 import { Vue, Component, Prop } from "vue-property-decorator";
 import Brand from "@/components/Brand.vue";
 
-import azure from "@/assets/azure.png";
+import digitalOcean from "@/assets/digital-ocean.png";
 
 @Component({ components: { Brand } })
 export default class Footer extends Vue {
   @Prop({ default: false }) readonly inverted!: boolean;
 
-  readonly azure = azure;
+  readonly digitalOcean = digitalOcean;
 }
 </script>
 
@@ -110,7 +110,7 @@ export default class Footer extends Vue {
 
       img {
         @apply pt-1;
-        @apply w-24;
+        @apply w-32;
       }
     }
 
