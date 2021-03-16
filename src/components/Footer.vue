@@ -16,13 +16,7 @@
       </section>
       <section class="footer-provider">
         <h1>Delivered from the cloud by</h1>
-        <a
-          href="https://m.do.co/c/e1ff9e0b9877"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img :src="digitalOcean" alt="DigitalOcean logo" />
-        </a>
+        <img :src="digitalOcean" alt="DigitalOcean logo" />
       </section>
     </div>
   </footer>
