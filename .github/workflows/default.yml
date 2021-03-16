@@ -5,9 +5,9 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-  
+
   workflow_dispatch:
-  
+
 jobs:
   build:
     name: Build and deploy
@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-      
+
       - id: version_bump
         name: Bump version and push tag
         if: github.ref == 'refs/heads/master'
@@ -24,38 +24,25 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
-          
-      - name: Login to Azure via Azure-CLI
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-          
-      - name: Retrieve Azure Container Registry credentials
-        run: |
-           az acr login -n oechsler
-
-      - name: Build Docker image
-        if: github.ref != 'refs/heads/master'
-        run: |
-          docker build . -t website:latest
 
       - name: Build and publish Docker image
-        if: github.ref == 'refs/heads/master'
-        uses: mr-smithers-excellent/docker-build-push@v5.2
+        uses: elgohr/Publish-Docker-Github-Action@3.02
         with:
-          image: website
-          tags: latest, ${{ steps.version_bump.outputs.new_tag }}
-          registry: oechsler.azurecr.io
-          
-      - name: Setup Azure Kubernetes Services
-        uses: Azure/setup-kubectl@v1
-      
-      - name: Retrieve Azure Kubernetes Cluster credentials
-        run: |
-           az aks get-credentials -g Infrastructure -n oechsler
-          
+          name: oechsler/website
+          username: ${{ secrets.DO_PERSONAL_TOKEN }}
+          password: ${{ secrets.DO_PERSONAL_TOKEN }}
+          registry: registry.digitalocean.com
+          tags: "latest,${{ steps.version_bump.outputs.new_tag }}"
+          no_push: ${{ github.ref != 'refs/heads/master' }}
+
+      - name: Authenticate with Kubernetes
+        if: github.ref == 'refs/heads/master'
+        uses: matootie/dokube@v1.3.4
+        with:
+          personalAccessToken: ${{ secrets.DO_PERSONAL_TOKEN }}
+          clusterName: kubernetes
+          namespace: website
+
       - name: Deploy to Kubernetes
         if: github.ref == 'refs/heads/master'
-        run: |
-          kubectl config set-context --current --namespace=website
-          kubectl set image deployment frontend website="oechsler.azurecr.io/website:${{ steps.version_bump.outputs.new_tag }}" --record
+        run: kubectl set image deployment frontend website="registry.digitalocean.com/oechsler/website:${{ steps.version_bump.outputs.new_tag }}" --record
