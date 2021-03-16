@@ -34,6 +34,10 @@ const routes: RouteConfig[] = [
         }
       ]
     }
+  },
+  {
+    path: "*",
+    redirect: "/"
   }
 ];
 
