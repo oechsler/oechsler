@@ -45,4 +45,6 @@ jobs:
 
       - name: Deploy to Kubernetes
         if: github.ref == 'refs/heads/master'
-        run: kubectl set image deployment frontend website="registry.digitalocean.com/oechsler/website:${{ steps.version_bump.outputs.new_tag }}" --record
+        env:
+          IMAGE_TAG: ${{ steps.version_bump.outputs.new_tag }}
+        run: kubectl set image deployment frontend website="registry.digitalocean.com/oechsler/website:${IMAGE_TAG:-latest}" --record
