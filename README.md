@@ -1,6 +1,9 @@
-### Hey you,
+### Hey you 👋
 
-**I'm a computer science student** at Baden-Württemberg Cooperative State University in Karlsruhe and work for medialesson GmbH in Pforzheim. During my spare time I like to create awesome apps & services, of which you can find a selection pinned below, other stuff can be found in the `Repositories` tab.   
+**I'm a developer** at Becklyn GmbH in Ludwigsbrug.  
+During my spare time I like to create awesome apps & services,  
+of which you can find a selection pinned below,  
+other stuff can be found in the `Repositories` tab.   
 
 #### Technologies
 I know a fair bit of technologies and languages already  
