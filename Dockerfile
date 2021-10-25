@@ -1,4 +1,4 @@
-FROM node:lts-alpine as BUILD
+FROM node:16-alpine as build
 
 # Install dependencies
 RUN apk update && \
@@ -10,13 +10,16 @@ WORKDIR /project
 COPY . .
 RUN yarn install
 
-# Build project into /project/build
+# Build project into /project/.output
 RUN yarn build
 
-FROM caddy/caddy:alpine as DEPLOY
+FROM node:16-alpine
 
-# Add built react app
-COPY --from=BUILD /project/dist /var/www/html
+RUN mkdir /dist
+WORKDIR /dist
+COPY --from=BUILD /project/.output /dist
 
-# Add caddy server config
-COPY ./Caddyfile /etc/caddy/Caddyfile
+ENV NUXT_HOST=0.0.0.0
+ENV NUXT_PORT=8080
+
+ENTRYPOINT [ "node", "/dist/server/index.mjs" ]

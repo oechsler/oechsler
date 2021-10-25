@@ -1,0 +1,30 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  namespace: website
+  name: website
+  labels:
+    app: website
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: website
+  template:
+    metadata:
+      labels:
+        app: website
+    spec:
+      imagePullSecrets:
+        - name: oechsler
+      containers:
+        - name: website
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "250m"
+          image: registry.digitalocean.com/oechsler/website:latest 
+          ports:
+            - name: http
+              containerPort: 8080
