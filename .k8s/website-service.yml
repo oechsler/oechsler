@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: website-traefik-ingress
+  namespace: website
+
+spec:
+  ports:
+    - protocol: TCP
+      name: http
+      port: 8080
+  selector:
+    app: website
+    
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: website-http
+  namespace: website
+  
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`oechsler.it`) || Host(`www.oechsler.it`)
+    kind: Rule
+    services:
+    - name: website-traefik-ingress
+      port: 8080
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: website-https
+  namespace: website
+  
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`oechsler.it`) || Host(`www.oechsler.it`)
+    kind: Rule
+    services:
+    - name: website-traefik-ingress
+      port: 8080
+  tls:
+    certResolver: default
