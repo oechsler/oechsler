@@ -19,7 +19,7 @@ jobs:
 
       - id: version_bump
         name: Bump version and push Git tag
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/main'
         uses: anothrNick/github-tag-action@1.26.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -33,10 +33,10 @@ jobs:
           password: ${{ secrets.DO_PERSONAL_TOKEN }}
           registry: registry.digitalocean.com
           tags: "latest,${{ steps.version_bump.outputs.new_tag }}"
-          no_push: ${{ github.ref != 'refs/heads/master' }}
+          no_push: ${{ github.ref != 'refs/heads/main' }}
 
       - name: Authenticate with Kubernetes Cluster
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/main'
         uses: matootie/dokube@v1.3.4
         with:
           personalAccessToken: ${{ secrets.DO_PERSONAL_TOKEN }}
@@ -44,5 +44,5 @@ jobs:
           namespace: website
 
       - name: Deploy to Kubernetes Cluster
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/main'
         run: kubectl set image deployment website website="registry.digitalocean.com/oechsler/website:${{ steps.version_bump.outputs.new_tag }}" --record
