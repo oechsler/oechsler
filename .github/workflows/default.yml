@@ -37,7 +37,7 @@ jobs:
           no_push: ${{ github.ref != 'refs/heads/main' }}
 
     outputs:
-      image_tag: ${{ steps.build.version_bump.outputs.new_tag }}
+      image_tag: ${{ steps.version_bump.outputs.new_tag }}
 
   deploy:
     name: Deploy
