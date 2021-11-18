@@ -1,16 +1,17 @@
-name: Build Pipeline
+name: Default Pipeline
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
-
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
   build:
-    name: Build and deploy
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
@@ -35,8 +36,18 @@ jobs:
           tags: "latest,${{ steps.version_bump.outputs.new_tag }}"
           no_push: ${{ github.ref != 'refs/heads/main' }}
 
+    outputs:
+      image_tag: ${{ steps.build.version_bump.outputs.new_tag }}
+
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    needs:
+      - build
+    if: github.ref == 'refs/heads/main'
+
+    steps:
       - name: Authenticate with Kubernetes Cluster
-        if: github.ref == 'refs/heads/main'
         uses: matootie/dokube@v1.3.4
         with:
           personalAccessToken: ${{ secrets.DO_PERSONAL_TOKEN }}
@@ -44,5 +55,4 @@ jobs:
           namespace: website
 
       - name: Deploy to Kubernetes Cluster
-        if: github.ref == 'refs/heads/main'
-        run: kubectl set image deployment website website="registry.digitalocean.com/oechsler/website:${{ steps.version_bump.outputs.new_tag }}" --record
+        run: kubectl set image deployment website website="registry.digitalocean.com/oechsler/website:${{ needs.build.outputs.image_tag }}" --record

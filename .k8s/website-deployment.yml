@@ -24,7 +24,7 @@ spec:
             limits:
               memory: "128Mi"
               cpu: "250m"
-          image: registry.digitalocean.com/oechsler/website:latest 
+          image: registry.digitalocean.com/oechsler/website:latest
           ports:
             - name: http
               containerPort: 8080
