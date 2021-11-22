@@ -1,8 +1,10 @@
-import '../styles/globals.css'
+import '../styles/globals.scss'
+import '@fontsource/inter/variable.css'
+
 import type { AppProps } from 'next/app'
 
-function MyApp({ Component, pageProps }: AppProps) {
+const App = ({ Component, pageProps }: AppProps) => {
   return <Component {...pageProps} />
-}
+};
 
-export default MyApp
+export default App;
