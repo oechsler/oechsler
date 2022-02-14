@@ -5,8 +5,6 @@
 During my spare time I like to create awesome apps, of which you can find my top picks pinned below.  
 The other projects can be found in the `Repositories` tab. 
 
-#### GitHub stats
-
 ![GitHub stats](https://github-readme-stats.vercel.app/api?username=oechsler&show_icons=true&count_private=true)&nbsp;
 
 #### Technologies
