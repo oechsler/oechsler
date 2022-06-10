@@ -1,12 +1,10 @@
 {
 	"name": "oechsler",
 	"build": {
-		"dockerfile": "Dockerfile",
+		"dockerfile": "Dockerfile"
 	},
-	"settings": {},
 	"extensions": [
-		"ms-azuretools.vscode-docker",
-		"github.copilot",
-		"bradlc.vscode-tailwindcss"
-	],
+		"bradlc.vscode-tailwindcss",
+		"esbenp.prettier-vscode"
+	]
 }

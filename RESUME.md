@@ -3,7 +3,7 @@
 ![](.github/assets/about-me.jpg)
 
 Hi, I'm Sam. Currently, I'm with Becklyn Studios in Ludwigsburg building software as a Backend Developer.
-I recently graduated* from Baden-Württemberg Cooperative State University (DHBW) in Karlsruhe and earned a bachelors degree in computer science. Prior to that I've been dreaming in code since pretty much the beginning of the last decade and thus have
+I recently graduated from Baden-Württemberg Cooperative State University (DHBW) in Karlsruhe and earned a bachelors degree in computer science (B.Sc.). Prior to that I've been dreaming in code since pretty much the beginning of the last decade and thus have
 gained roughly eight years now of *personal experience* in coding with various technologies and languages, something I 
 always like to dedicate some of my free time to. Whilst studying I have also gained roughly two years of experience in 
 the industry now. 
@@ -15,7 +15,7 @@ the industry now.
 
 ## Education
 
-- 2018 &minus; 2021* &emsp; Bachelor of Science in Applied Computer Science at Cooperative State University (DHBW)
+- 2018 &minus; 2021 &emsp; Bachelor of Science in Applied Computer Science at Cooperative State University (DHBW)
 - 2011 &minus; 2018 &emsp; Abitur at the Lise-Meitner Gymnasium in Königsbach-Stein
 - 2009 &minus; 2011 &emsp; Reuchlin Gymnasium Pforzheim
 - 2005 &minus; 2009 &emsp; Elmentary School Eisingen
@@ -44,21 +44,15 @@ the industry now.
 
 ### Languages
 
-- C#, Kotlin, TypeScript &minus; very confident
-- Go, Shell-Scripting &minus; confident
-- Swift &minus; enty-level
+- Go, C#, TypeScript &minus; very confident
 
 ### Frameworks
 
-- Vue.JS, ASP.Net Core, Ktor &minus; very confident
-- React, Angular, Tailwind CSS &minus; confident
+- ASP.NET &minus; very confident
+- React, Tailwind CSS, Styled-Componets/Emotion &minus; confident
 
 ### Tools
 
 - Docker, Git &minus; very confident
 - Azure DevOps, Azure Cloud, Kubernetes &minus; confident
 - Helm &minus; entry-level
-
----
-
-> *Expected completion in 2021
