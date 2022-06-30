@@ -35,7 +35,7 @@ const Home: NextPage = () => (
       </p>
       <p className="mt-4">
         If you want to see how it's made or just something that has a little
-        more spice to it than my website, then do not hesitate:
+        more spice to it than my website do not hesitate:
       </p>
       <a
         className="mt-4 text-gray-500 hover:text-gray-700"
