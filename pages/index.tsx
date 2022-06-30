@@ -59,8 +59,8 @@ const Home: NextPage = () => (
           in Ludwigsburg.
         </p>
         <p className="mt-4">
-          In my spare time i like to 👨‍💻&nbsp;code and 🕹&nbsp;play games.
-          &minus;&nbsp;I mean who doesn&apos;t?
+          In my spare time i like to 👨‍💻&nbsp;code and 🕹&nbsp;play games
+          <span className="sm:block"> &minus;&nbsp;who doesn&apos;t?</span>
         </p>
         <p className="mt-4">
           If you want to see how it&apos;s made or just something that has a
