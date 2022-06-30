@@ -10,6 +10,7 @@ const Home: NextPage = () => (
           <Image
             className="object-contain"
             src="/sam-memoji.png"
+            alt="Memoji of Sam"
             width={64}
             height={64}
             layout="responsive"
@@ -18,12 +19,13 @@ const Home: NextPage = () => (
         <h1>Sam</h1>
       </div>
       <p className="mt-12">
-        I'm a backend developer at{" "}
+        I&apos;m a backend developer at{" "}
         <a
           className="mt-4 text-gray-500 hover:text-gray-700"
           href="https://becklyn.com"
           target={"_blank"}
           referrerPolicy={"no-referrer"}
+          rel="noreferrer"
         >
           Becklyn Studios
         </a>{" "}
@@ -31,17 +33,18 @@ const Home: NextPage = () => (
       </p>
       <p className="mt-4">
         In my spare time i like to 👨‍💻&nbsp;code and 🕹&nbsp;play games.
-        &minus;&nbsp;I mean who doesn't?
+        &minus;&nbsp;I mean who doesn&apos;t?
       </p>
       <p className="mt-4">
-        If you want to see how it's made or just something that has a little
-        more spice to it than my website do not hesitate:
+        If you want to see how it&apos;s made or just something that has a
+        little more spice to it than my website do not hesitate:
       </p>
       <a
         className="mt-4 text-gray-500 hover:text-gray-700"
         href="https://github.com/oechsler"
         target={"_blank"}
         referrerPolicy={"no-referrer"}
+        rel="noreferrer"
       >
         Visit me on GitHub &rarr;
       </a>
@@ -54,7 +57,7 @@ const Home: NextPage = () => (
     <hr className="border-1 border-gray-200" />
     <section className="py-12">
       <h1 className="text-3xl font-extrabold">Imprint</h1>
-      <h2 className="text-md text-gray-500">pls don't sue me!</h2>
+      <h2 className="text-md text-gray-500">pls don&apos;t sue me!</h2>
       <p className="mt-12">According to §5 TMG:</p>
       <p className="mt-4">Samuel Oechsler</p>
       <p>Beutstraße 3</p>
