@@ -56,7 +56,17 @@ const Home: NextPage = () => (
           >
             Becklyn Studios
           </a>{" "}
-          in Ludwigsburg.
+          in Ludwigsburg. I also do stuff part-time for{" "}
+          <a
+            className="mt-4 text-gray-500 hover:text-gray-700"
+            href="https://codeeffect.io/"
+            target={"_blank"}
+            referrerPolicy={"no-referrer"}
+            rel="noreferrer"
+          >
+            CodeEffect
+          </a>
+          .
         </p>
         <p className="mt-4">
           In my spare time I like to 👨‍💻&nbsp;code and 🕹&nbsp;play games
