@@ -9,5 +9,8 @@ export default defineNuxtConfig({
     components: {
         global: true,
         dirs: ['~/components']
+    },
+    nitro: {
+        preset: "digital-ocean"
     }
 })
