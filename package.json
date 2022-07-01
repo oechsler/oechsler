@@ -1,5 +1,10 @@
 {
+  "name": "oechsler",
+  "description": "Samuel Oechslers personal website",
   "private": true,
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
