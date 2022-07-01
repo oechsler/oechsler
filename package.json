@@ -1,30 +1,14 @@
 {
-  "name": "oechsler",
-  "description": "Personal website of Samuel Oechsler",
-  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "^12.2.0",
-    "react": "^18.2.0",
-    "react-children-utilities": "^2.8.0",
-    "react-dom": "^18.2.0"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
   },
   "devDependencies": {
-    "@types/node": "^18.0.0",
-    "@types/react": "^18.0.14",
-    "@types/react-dom": "^18.0.5",
-    "autoprefixer": "^10.4.7",
-    "eslint": "^8.18.0",
-    "eslint-config-next": "^12.2.0",
-    "eslint-config-prettier": "^8.5.0",
-    "postcss": "^8.4.14",
-    "tailwindcss": "^3.1.4",
-    "typescript": "^4.7.4"
+    "@nuxt/content-edge": "latest",
+    "@nuxtjs/tailwindcss": "^5.1.3",
+    "nuxt": "3.0.0-rc.4"
   }
 }
