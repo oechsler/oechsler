@@ -42,17 +42,18 @@ the industry now.
 
 ## Competences & Skills
 
-### Languages
+### Programming Languages
 
-- Go, C#, TypeScript &minus; very confident
+- Go, TypeScript &minus; very confident
+- PHP, C# &minus; confident
 
 ### Frameworks
 
-- ASP.NET &minus; very confident
-- React, Tailwind CSS, Styled-Componets/Emotion &minus; confident
+- ASP.NET, Symfony &minus; very confident
+- React, Vue &minus; confident
 
-### Tools
+### Tools & Platforms
 
 - Docker, Git &minus; very confident
-- Azure DevOps, Azure Cloud, Kubernetes &minus; confident
-- Helm &minus; entry-level
+- Azure Cloud, Kubernetes &minus; confident
+- Helm, Ansible &minus; entry-level
