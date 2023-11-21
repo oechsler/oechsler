@@ -22,7 +22,8 @@ the industry now.
 
 ## Experience
 
-- 2021 &minus; **now** &emsp; Backend Developer at Becklyn GmbH in Ludwigsburg
+- 2023 &minus; **now** &emsp; Developer at Mercedes Benz AG
+- 2021 &minus; 2023 &emsp; Backend Developer at Becklyn GmbH in Ludwigsburg
 - 2018 &minus; 2021 &emsp; Developer at medialesson GmbH in Pforzheim
 
 ### Tech related
