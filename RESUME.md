@@ -1,12 +1,9 @@
 # Resume
 
-![](.github/assets/about-me.jpg)
+Hi, I'm Sam. Currently, I'm with Mercedes Benz AG building software as a developer.
+I graduated from Baden-Württemberg Cooperative State University (DHBW) in Karlsruhe in 2021 and earned a bachelor's degree in computer science (B.Sc.). 
 
-Hi, I'm Sam. Currently, I'm with Becklyn Studios in Ludwigsburg building software as a Backend Developer.
-I recently graduated from Baden-Württemberg Cooperative State University (DHBW) in Karlsruhe and earned a bachelors degree in computer science (B.Sc.). Prior to that I've been dreaming in code since pretty much the beginning of the last decade and thus have
-gained roughly eight years now of *personal experience* in coding with various technologies and languages, something I 
-always like to dedicate some of my free time to. Whilst studying I have also gained roughly two years of experience in 
-the industry now. 
+Prior to that, I've been dreaming in code since pretty much the beginning of the last decade and thus have gained roughly a decade now of *personal experience* in coding with various technologies and languages, something I always like to dedicate some of my free time to. Whilst studying, I also gained roughly two years of experience in the industry.
 
 ## Languages
 
@@ -40,21 +37,3 @@ the industry now.
 - 2017 & 2018 &emsp; Holiday job in manufacturing at Daimler AG (Rastatt)
 - 2016 &minus; 2018 &emsp; Kitchen assistant at Hotel Krone in Stein (Baden)
 - 2014 &emsp; "Sozialpraktikum" at Tagespflege Eisingen
-
-## Competences & Skills
-
-### Programming Languages
-
-- Go, TypeScript &minus; very confident
-- PHP, C# &minus; confident
-
-### Frameworks
-
-- ASP.NET, Symfony &minus; very confident
-- React, Vue &minus; confident
-
-### Tools & Platforms
-
-- Docker, Git &minus; very confident
-- Azure Cloud, Kubernetes &minus; confident
-- Helm, Ansible &minus; entry-level
