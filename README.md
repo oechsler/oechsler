@@ -10,7 +10,7 @@ That's why my self-hosted Forgejo instance is where most of my work lives first.
 
 **Find me at:**
 
-- **Forgejo** (primary): [git.at.oechsler.it](https://git.at.oechsler.it)
+- **Forgejo** (primary): [git.at.oechsler.it/samuel](https://git.at.oechsler.it/samuel)
 - **GitHub**: [oechsler](https://github.com/oechsler)
 - **Codeberg**: [oechsler](https://codeberg.org/oechsler)
 - **Matrix**: [@samuel:oechsler.it](https://matrix.to/#/@samuel:oechsler.it)
