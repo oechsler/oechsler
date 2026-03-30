@@ -4,7 +4,7 @@ I'm a backend software engineer at Mercedes-Benz, mainly working in Go, Rust, an
 During my spare time I sometimes also code stuff — you can find all my projects in the `Repositories` tab.
 
 I believe in digital sovereignty, open source, and owning your own infrastructure.  
-That's why my self-hosted Forgejo instance is where most of my work lives first.
+That's why my self-hosted Forgejo instance is where most of my work lives first (at least from now on).
 
 ---
 
